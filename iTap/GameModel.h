@@ -18,8 +18,8 @@
 }
 -(id) init: (NSInteger) numUser andUsers:(NSMutableArray*) userList;
 -(UserModel*) getStartingUser;
--(NSInteger) getStartTime: (NSInteger) lowerBound to:(NSInteger) upperBound;
+-(NSInteger) getTime;
 -(NSString*) finish;
-
+-(NSInteger) setTime: (NSInteger) lowerBound to:(NSInteger)upperBound;
 
 @end
