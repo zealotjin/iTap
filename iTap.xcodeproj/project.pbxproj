@@ -14,6 +14,9 @@
 		C83F468A1A0EF27200897EB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C83F46891A0EF27200897EB3 /* Images.xcassets */; };
 		C83F468D1A0EF27200897EB3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C83F468B1A0EF27200897EB3 /* LaunchScreen.xib */; };
 		C83F46991A0EF27200897EB3 /* iTapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C83F46981A0EF27200897EB3 /* iTapTests.m */; };
+		C83F46A41A0EF35F00897EB3 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C83F46A31A0EF35F00897EB3 /* GameModel.m */; };
+		C83F46A71A0EF37000897EB3 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C83F46A61A0EF37000897EB3 /* UserModel.m */; };
+		C83F46AA1A0EF3F200897EB3 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = C83F46A91A0EF3F200897EB3 /* GameController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,12 @@
 		C83F46921A0EF27200897EB3 /* iTapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C83F46971A0EF27200897EB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C83F46981A0EF27200897EB3 /* iTapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTapTests.m; sourceTree = "<group>"; };
+		C83F46A21A0EF35F00897EB3 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		C83F46A31A0EF35F00897EB3 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
+		C83F46A51A0EF37000897EB3 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		C83F46A61A0EF37000897EB3 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		C83F46A81A0EF3F200897EB3 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		C83F46A91A0EF3F200897EB3 /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +93,13 @@
 				C83F46801A0EF27200897EB3 /* AppDelegate.h */,
 				C83F46811A0EF27200897EB3 /* AppDelegate.m */,
 				C83F46831A0EF27200897EB3 /* ViewController.h */,
+				C83F46A81A0EF3F200897EB3 /* GameController.h */,
+				C83F46A91A0EF3F200897EB3 /* GameController.m */,
 				C83F46841A0EF27200897EB3 /* ViewController.m */,
+				C83F46A21A0EF35F00897EB3 /* GameModel.h */,
+				C83F46A31A0EF35F00897EB3 /* GameModel.m */,
+				C83F46A51A0EF37000897EB3 /* UserModel.h */,
+				C83F46A61A0EF37000897EB3 /* UserModel.m */,
 				C83F46861A0EF27200897EB3 /* Main.storyboard */,
 				C83F46891A0EF27200897EB3 /* Images.xcassets */,
 				C83F468B1A0EF27200897EB3 /* LaunchScreen.xib */,
@@ -220,6 +235,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C83F46851A0EF27200897EB3 /* ViewController.m in Sources */,
+				C83F46A71A0EF37000897EB3 /* UserModel.m in Sources */,
+				C83F46A41A0EF35F00897EB3 /* GameModel.m in Sources */,
+				C83F46AA1A0EF3F200897EB3 /* GameController.m in Sources */,
 				C83F46821A0EF27200897EB3 /* AppDelegate.m in Sources */,
 				C83F467F1A0EF27200897EB3 /* main.m in Sources */,
 			);
@@ -414,6 +432,7 @@
 				C83F469E1A0EF27200897EB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C83F469F1A0EF27200897EB3 /* Build configuration list for PBXNativeTarget "iTapTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +441,7 @@
 				C83F46A11A0EF27200897EB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,11 +14,11 @@
 		<string>https://github.com/zealotjin/iTap.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iTap/iTap.xcodeproj</string>
+	<string>iTap.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>19333AC763DF03DCB69E27E7EDD5D38FDB4C0252</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/zealotjin/iTap.git</string>
