@@ -9,5 +9,20 @@
 #import <Foundation/Foundation.h>
 
 @interface UserModel : NSObject
+{
+    @private
+    NSString* name;
+    BOOL turn;
+    NSInteger* score;
+    
+}
+-(id) init;
+-(void) setName: (NSString*) name;
+-(NSString*) getName;
+-(NSInteger*) getScore;
+-(NSInteger*) addScore: (NSInteger*) score;
+-(BOOL) getTurn;
+-(void) noTurn;
+-(void) yesTurn;
 
 @end
