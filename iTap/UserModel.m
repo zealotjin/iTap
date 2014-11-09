@@ -18,9 +18,10 @@
     score = 0;    
     return self;
 
+    //comment test!!
+    //please work
     
 }
-
 
 
 -(NSInteger*) getScore{
