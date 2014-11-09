@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C80A56F81A058CED00E514D3"
+               BlueprintIdentifier = "C83F46781A0EF27200897EB3"
                BuildableName = "iTap.app"
                BlueprintName = "iTap"
                ReferencedContainer = "container:iTap.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C80A57131A058CF100E514D3"
+               BlueprintIdentifier = "C83F46911A0EF27200897EB3"
                BuildableName = "iTapTests.xctest"
                BlueprintName = "iTapTests"
                ReferencedContainer = "container:iTap.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C80A57131A058CF100E514D3"
+               BlueprintIdentifier = "C83F46911A0EF27200897EB3"
                BuildableName = "iTapTests.xctest"
                BlueprintName = "iTapTests"
                ReferencedContainer = "container:iTap.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C80A56F81A058CED00E514D3"
+            BlueprintIdentifier = "C83F46781A0EF27200897EB3"
             BuildableName = "iTap.app"
             BlueprintName = "iTap"
             ReferencedContainer = "container:iTap.xcodeproj">
@@ -75,7 +75,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C80A56F81A058CED00E514D3"
+            BlueprintIdentifier = "C83F46781A0EF27200897EB3"
             BuildableName = "iTap.app"
             BlueprintName = "iTap"
             ReferencedContainer = "container:iTap.xcodeproj">
@@ -93,7 +93,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C80A56F81A058CED00E514D3"
+            BlueprintIdentifier = "C83F46781A0EF27200897EB3"
             BuildableName = "iTap.app"
             BlueprintName = "iTap"
             ReferencedContainer = "container:iTap.xcodeproj">

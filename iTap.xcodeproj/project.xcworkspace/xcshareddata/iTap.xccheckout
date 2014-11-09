@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>E4C3A45C-12A0-498F-BE26-81855F8931D3</string>
+	<string>148EB24E-DFDC-4016-A7F5-4F4E802AA505</string>
 	<key>IDESourceControlProjectName</key>
 	<string>iTap</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/zealotjin/iTap.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iTap.xcodeproj</string>
+	<string>iTap/iTap.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>19333AC763DF03DCB69E27E7EDD5D38FDB4C0252</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/zealotjin/iTap.git</string>

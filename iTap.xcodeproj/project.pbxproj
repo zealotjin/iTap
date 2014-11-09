@@ -7,52 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C80A56FF1A058CEE00E514D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C80A56FE1A058CEE00E514D3 /* main.m */; };
-		C80A57021A058CEF00E514D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C80A57011A058CEF00E514D3 /* AppDelegate.m */; };
-		C80A57041A058CF100E514D3 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C80A57031A058CF100E514D3 /* art.scnassets */; };
-		C80A57071A058CF100E514D3 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C80A57061A058CF100E514D3 /* GameViewController.m */; };
-		C80A570A1A058CF100E514D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C80A57081A058CF100E514D3 /* Main.storyboard */; };
-		C80A570C1A058CF100E514D3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C80A570B1A058CF100E514D3 /* Images.xcassets */; };
-		C80A570F1A058CF100E514D3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C80A570D1A058CF100E514D3 /* LaunchScreen.xib */; };
-		C80A571B1A058CF100E514D3 /* iTapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C80A571A1A058CF100E514D3 /* iTapTests.m */; };
+		C83F467F1A0EF27200897EB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C83F467E1A0EF27200897EB3 /* main.m */; };
+		C83F46821A0EF27200897EB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C83F46811A0EF27200897EB3 /* AppDelegate.m */; };
+		C83F46851A0EF27200897EB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C83F46841A0EF27200897EB3 /* ViewController.m */; };
+		C83F46881A0EF27200897EB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C83F46861A0EF27200897EB3 /* Main.storyboard */; };
+		C83F468A1A0EF27200897EB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C83F46891A0EF27200897EB3 /* Images.xcassets */; };
+		C83F468D1A0EF27200897EB3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C83F468B1A0EF27200897EB3 /* LaunchScreen.xib */; };
+		C83F46991A0EF27200897EB3 /* iTapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C83F46981A0EF27200897EB3 /* iTapTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C80A57151A058CF100E514D3 /* PBXContainerItemProxy */ = {
+		C83F46931A0EF27200897EB3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C80A56F11A058CEC00E514D3 /* Project object */;
+			containerPortal = C83F46711A0EF27200897EB3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C80A56F81A058CED00E514D3;
+			remoteGlobalIDString = C83F46781A0EF27200897EB3;
 			remoteInfo = iTap;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C80A56F91A058CED00E514D3 /* iTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C80A56FD1A058CEE00E514D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C80A56FE1A058CEE00E514D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C80A57001A058CEF00E514D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C80A57011A058CEF00E514D3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C80A57031A058CF100E514D3 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		C80A57051A058CF100E514D3 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		C80A57061A058CF100E514D3 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		C80A57091A058CF100E514D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C80A570B1A058CF100E514D3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C80A570E1A058CF100E514D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		C80A57141A058CF100E514D3 /* iTapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C80A57191A058CF100E514D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C80A571A1A058CF100E514D3 /* iTapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTapTests.m; sourceTree = "<group>"; };
+		C83F46791A0EF27200897EB3 /* iTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C83F467D1A0EF27200897EB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C83F467E1A0EF27200897EB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C83F46801A0EF27200897EB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C83F46811A0EF27200897EB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C83F46831A0EF27200897EB3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C83F46841A0EF27200897EB3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C83F46871A0EF27200897EB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C83F46891A0EF27200897EB3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C83F468C1A0EF27200897EB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		C83F46921A0EF27200897EB3 /* iTapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C83F46971A0EF27200897EB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C83F46981A0EF27200897EB3 /* iTapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTapTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C80A56F61A058CED00E514D3 /* Frameworks */ = {
+		C83F46761A0EF27200897EB3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C80A57111A058CF100E514D3 /* Frameworks */ = {
+		C83F468F1A0EF27200897EB3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -62,62 +60,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C80A56F01A058CEC00E514D3 = {
+		C83F46701A0EF27200897EB3 = {
 			isa = PBXGroup;
 			children = (
-				C80A56FB1A058CEE00E514D3 /* iTap */,
-				C80A57171A058CF100E514D3 /* iTapTests */,
-				C80A56FA1A058CED00E514D3 /* Products */,
+				C83F467B1A0EF27200897EB3 /* iTap */,
+				C83F46951A0EF27200897EB3 /* iTapTests */,
+				C83F467A1A0EF27200897EB3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C80A56FA1A058CED00E514D3 /* Products */ = {
+		C83F467A1A0EF27200897EB3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C80A56F91A058CED00E514D3 /* iTap.app */,
-				C80A57141A058CF100E514D3 /* iTapTests.xctest */,
+				C83F46791A0EF27200897EB3 /* iTap.app */,
+				C83F46921A0EF27200897EB3 /* iTapTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C80A56FB1A058CEE00E514D3 /* iTap */ = {
+		C83F467B1A0EF27200897EB3 /* iTap */ = {
 			isa = PBXGroup;
 			children = (
-				C80A57001A058CEF00E514D3 /* AppDelegate.h */,
-				C80A57011A058CEF00E514D3 /* AppDelegate.m */,
-				C80A57031A058CF100E514D3 /* art.scnassets */,
-				C80A57051A058CF100E514D3 /* GameViewController.h */,
-				C80A57061A058CF100E514D3 /* GameViewController.m */,
-				C80A57081A058CF100E514D3 /* Main.storyboard */,
-				C80A570B1A058CF100E514D3 /* Images.xcassets */,
-				C80A570D1A058CF100E514D3 /* LaunchScreen.xib */,
-				C80A56FC1A058CEE00E514D3 /* Supporting Files */,
+				C83F46801A0EF27200897EB3 /* AppDelegate.h */,
+				C83F46811A0EF27200897EB3 /* AppDelegate.m */,
+				C83F46831A0EF27200897EB3 /* ViewController.h */,
+				C83F46841A0EF27200897EB3 /* ViewController.m */,
+				C83F46861A0EF27200897EB3 /* Main.storyboard */,
+				C83F46891A0EF27200897EB3 /* Images.xcassets */,
+				C83F468B1A0EF27200897EB3 /* LaunchScreen.xib */,
+				C83F467C1A0EF27200897EB3 /* Supporting Files */,
 			);
 			path = iTap;
 			sourceTree = "<group>";
 		};
-		C80A56FC1A058CEE00E514D3 /* Supporting Files */ = {
+		C83F467C1A0EF27200897EB3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C80A56FD1A058CEE00E514D3 /* Info.plist */,
-				C80A56FE1A058CEE00E514D3 /* main.m */,
+				C83F467D1A0EF27200897EB3 /* Info.plist */,
+				C83F467E1A0EF27200897EB3 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C80A57171A058CF100E514D3 /* iTapTests */ = {
+		C83F46951A0EF27200897EB3 /* iTapTests */ = {
 			isa = PBXGroup;
 			children = (
-				C80A571A1A058CF100E514D3 /* iTapTests.m */,
-				C80A57181A058CF100E514D3 /* Supporting Files */,
+				C83F46981A0EF27200897EB3 /* iTapTests.m */,
+				C83F46961A0EF27200897EB3 /* Supporting Files */,
 			);
 			path = iTapTests;
 			sourceTree = "<group>";
 		};
-		C80A57181A058CF100E514D3 /* Supporting Files */ = {
+		C83F46961A0EF27200897EB3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C80A57191A058CF100E514D3 /* Info.plist */,
+				C83F46971A0EF27200897EB3 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -125,13 +122,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C80A56F81A058CED00E514D3 /* iTap */ = {
+		C83F46781A0EF27200897EB3 /* iTap */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C80A571E1A058CF100E514D3 /* Build configuration list for PBXNativeTarget "iTap" */;
+			buildConfigurationList = C83F469C1A0EF27200897EB3 /* Build configuration list for PBXNativeTarget "iTap" */;
 			buildPhases = (
-				C80A56F51A058CED00E514D3 /* Sources */,
-				C80A56F61A058CED00E514D3 /* Frameworks */,
-				C80A56F71A058CED00E514D3 /* Resources */,
+				C83F46751A0EF27200897EB3 /* Sources */,
+				C83F46761A0EF27200897EB3 /* Frameworks */,
+				C83F46771A0EF27200897EB3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -139,46 +136,46 @@
 			);
 			name = iTap;
 			productName = iTap;
-			productReference = C80A56F91A058CED00E514D3 /* iTap.app */;
+			productReference = C83F46791A0EF27200897EB3 /* iTap.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C80A57131A058CF100E514D3 /* iTapTests */ = {
+		C83F46911A0EF27200897EB3 /* iTapTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C80A57211A058CF100E514D3 /* Build configuration list for PBXNativeTarget "iTapTests" */;
+			buildConfigurationList = C83F469F1A0EF27200897EB3 /* Build configuration list for PBXNativeTarget "iTapTests" */;
 			buildPhases = (
-				C80A57101A058CF100E514D3 /* Sources */,
-				C80A57111A058CF100E514D3 /* Frameworks */,
-				C80A57121A058CF100E514D3 /* Resources */,
+				C83F468E1A0EF27200897EB3 /* Sources */,
+				C83F468F1A0EF27200897EB3 /* Frameworks */,
+				C83F46901A0EF27200897EB3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C80A57161A058CF100E514D3 /* PBXTargetDependency */,
+				C83F46941A0EF27200897EB3 /* PBXTargetDependency */,
 			);
 			name = iTapTests;
 			productName = iTapTests;
-			productReference = C80A57141A058CF100E514D3 /* iTapTests.xctest */;
+			productReference = C83F46921A0EF27200897EB3 /* iTapTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C80A56F11A058CEC00E514D3 /* Project object */ = {
+		C83F46711A0EF27200897EB3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "KJJ Inc.";
 				TargetAttributes = {
-					C80A56F81A058CED00E514D3 = {
+					C83F46781A0EF27200897EB3 = {
 						CreatedOnToolsVersion = 6.1;
 					};
-					C80A57131A058CF100E514D3 = {
+					C83F46911A0EF27200897EB3 = {
 						CreatedOnToolsVersion = 6.1;
-						TestTargetID = C80A56F81A058CED00E514D3;
+						TestTargetID = C83F46781A0EF27200897EB3;
 					};
 				};
 			};
-			buildConfigurationList = C80A56F41A058CED00E514D3 /* Build configuration list for PBXProject "iTap" */;
+			buildConfigurationList = C83F46741A0EF27200897EB3 /* Build configuration list for PBXProject "iTap" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -186,30 +183,29 @@
 				en,
 				Base,
 			);
-			mainGroup = C80A56F01A058CEC00E514D3;
-			productRefGroup = C80A56FA1A058CED00E514D3 /* Products */;
+			mainGroup = C83F46701A0EF27200897EB3;
+			productRefGroup = C83F467A1A0EF27200897EB3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C80A56F81A058CED00E514D3 /* iTap */,
-				C80A57131A058CF100E514D3 /* iTapTests */,
+				C83F46781A0EF27200897EB3 /* iTap */,
+				C83F46911A0EF27200897EB3 /* iTapTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C80A56F71A058CED00E514D3 /* Resources */ = {
+		C83F46771A0EF27200897EB3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C80A570F1A058CF100E514D3 /* LaunchScreen.xib in Resources */,
-				C80A570C1A058CF100E514D3 /* Images.xcassets in Resources */,
-				C80A57041A058CF100E514D3 /* art.scnassets in Resources */,
-				C80A570A1A058CF100E514D3 /* Main.storyboard in Resources */,
+				C83F46881A0EF27200897EB3 /* Main.storyboard in Resources */,
+				C83F468D1A0EF27200897EB3 /* LaunchScreen.xib in Resources */,
+				C83F468A1A0EF27200897EB3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C80A57121A058CF100E514D3 /* Resources */ = {
+		C83F46901A0EF27200897EB3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -219,47 +215,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C80A56F51A058CED00E514D3 /* Sources */ = {
+		C83F46751A0EF27200897EB3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C80A57021A058CEF00E514D3 /* AppDelegate.m in Sources */,
-				C80A57071A058CF100E514D3 /* GameViewController.m in Sources */,
-				C80A56FF1A058CEE00E514D3 /* main.m in Sources */,
+				C83F46851A0EF27200897EB3 /* ViewController.m in Sources */,
+				C83F46821A0EF27200897EB3 /* AppDelegate.m in Sources */,
+				C83F467F1A0EF27200897EB3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C80A57101A058CF100E514D3 /* Sources */ = {
+		C83F468E1A0EF27200897EB3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C80A571B1A058CF100E514D3 /* iTapTests.m in Sources */,
+				C83F46991A0EF27200897EB3 /* iTapTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C80A57161A058CF100E514D3 /* PBXTargetDependency */ = {
+		C83F46941A0EF27200897EB3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C80A56F81A058CED00E514D3 /* iTap */;
-			targetProxy = C80A57151A058CF100E514D3 /* PBXContainerItemProxy */;
+			target = C83F46781A0EF27200897EB3 /* iTap */;
+			targetProxy = C83F46931A0EF27200897EB3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C80A57081A058CF100E514D3 /* Main.storyboard */ = {
+		C83F46861A0EF27200897EB3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C80A57091A058CF100E514D3 /* Base */,
+				C83F46871A0EF27200897EB3 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		C80A570D1A058CF100E514D3 /* LaunchScreen.xib */ = {
+		C83F468B1A0EF27200897EB3 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C80A570E1A058CF100E514D3 /* Base */,
+				C83F468C1A0EF27200897EB3 /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -267,7 +263,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		C80A571C1A058CF100E514D3 /* Debug */ = {
+		C83F469A1A0EF27200897EB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -309,7 +305,7 @@
 			};
 			name = Debug;
 		};
-		C80A571D1A058CF100E514D3 /* Release */ = {
+		C83F469B1A0EF27200897EB3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -345,7 +341,7 @@
 			};
 			name = Release;
 		};
-		C80A571F1A058CF100E514D3 /* Debug */ = {
+		C83F469D1A0EF27200897EB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -355,7 +351,7 @@
 			};
 			name = Debug;
 		};
-		C80A57201A058CF100E514D3 /* Release */ = {
+		C83F469E1A0EF27200897EB3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -365,7 +361,7 @@
 			};
 			name = Release;
 		};
-		C80A57221A058CF100E514D3 /* Debug */ = {
+		C83F46A01A0EF27200897EB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -384,7 +380,7 @@
 			};
 			name = Debug;
 		};
-		C80A57231A058CF100E514D3 /* Release */ = {
+		C83F46A11A0EF27200897EB3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -402,32 +398,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C80A56F41A058CED00E514D3 /* Build configuration list for PBXProject "iTap" */ = {
+		C83F46741A0EF27200897EB3 /* Build configuration list for PBXProject "iTap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C80A571C1A058CF100E514D3 /* Debug */,
-				C80A571D1A058CF100E514D3 /* Release */,
+				C83F469A1A0EF27200897EB3 /* Debug */,
+				C83F469B1A0EF27200897EB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C80A571E1A058CF100E514D3 /* Build configuration list for PBXNativeTarget "iTap" */ = {
+		C83F469C1A0EF27200897EB3 /* Build configuration list for PBXNativeTarget "iTap" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C80A571F1A058CF100E514D3 /* Debug */,
-				C80A57201A058CF100E514D3 /* Release */,
+				C83F469D1A0EF27200897EB3 /* Debug */,
+				C83F469E1A0EF27200897EB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		C80A57211A058CF100E514D3 /* Build configuration list for PBXNativeTarget "iTapTests" */ = {
+		C83F469F1A0EF27200897EB3 /* Build configuration list for PBXNativeTarget "iTapTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C80A57221A058CF100E514D3 /* Debug */,
-				C80A57231A058CF100E514D3 /* Release */,
+				C83F46A01A0EF27200897EB3 /* Debug */,
+				C83F46A11A0EF27200897EB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C80A56F11A058CEC00E514D3 /* Project object */;
+	rootObject = C83F46711A0EF27200897EB3 /* Project object */;
 }
