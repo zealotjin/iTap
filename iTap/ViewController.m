@@ -44,7 +44,6 @@ numberOfRowsInComponent:(NSInteger)component
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component
 {
-    NSLog(@"yo");
     return _level[row];
 }
 

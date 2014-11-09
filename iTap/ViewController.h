@@ -13,8 +13,7 @@
 }
 
 @property (strong, nonatomic) IBOutlet UIPickerView* picker;
-@property (strong, nonatomic) NSArray *exchangeRates;
-@property (strong, nonatomic) NSArray *countryNames;
+@property (strong, nonatomic) IBOutlet UISlider* slider;
 
 - (NSInteger)numberOfComponentsInPickerView: (UIPickerView *)pickerView;
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
