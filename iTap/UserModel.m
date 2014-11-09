@@ -18,10 +18,9 @@
     score = 0;    
     return self;
 
-    //comment test
 
-
-
+    //comment test!!
+    //please work
 }
 
 
