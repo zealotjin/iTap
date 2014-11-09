@@ -23,8 +23,7 @@
 
 
 -(NSInteger*) getScore{
-    //comment testing
-    //another comment
+    
     return score;
 }
 
