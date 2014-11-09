@@ -11,14 +11,14 @@
 @interface GameModel : NSObject
 {
     @private
-    NSInteger* time;
-    NSInteger* numUser;
+    NSInteger time;
+    NSInteger numUser;
     UserModel* startingUser;
     NSMutableArray* users;
 }
--(id) init: (NSInteger*) numUser andUsers:(NSMutableArray*) userList;
+-(id) init: (NSInteger) numUser andUsers:(NSMutableArray*) userList;
 -(UserModel*) getStartingUser;
--(NSInteger*) getStartTime: (NSInteger*) lowerBound to:(NSInteger*) upperBound;
+-(NSInteger) getStartTime: (NSInteger) lowerBound to:(NSInteger) upperBound;
 -(NSString*) finish;
 
 

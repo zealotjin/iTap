@@ -9,7 +9,7 @@
 #import "GameModel.h"
 
 @implementation GameModel
--(id) init: (NSInteger*) num andUsers:(NSMutableArray *)userList{
+-(id) init: (NSInteger) num andUsers:(NSMutableArray *)userList{
     numUser = num;
     users = userList;
     return self;
@@ -17,10 +17,11 @@
 -(UserModel*) getStartingUser{
     return [users objectAtIndex:0];
 }
--(NSInteger*) getStartTime: (NSInteger*) lowerBound to:(NSInteger *)upperBound{
-    return time;
+-(NSInteger) getStartTime: (NSInteger) lowerBound to:(NSInteger)upperBound{
+    return lowerBound + arc4random_uniform(upperBound - lowerBound + 1);
 }
 -(NSString*) finish{
+    //returns a string that includes the user who lost
     return @"finish";
 }
 @end
