@@ -18,8 +18,8 @@
     score = 0;    
     return self;
 
-    //comment test
-    //asdf  
+    //comment test!!
+    
 }
 
 
