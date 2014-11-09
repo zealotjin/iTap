@@ -15,6 +15,7 @@
     NSInteger numUser;
     UserModel* startingUser;
     NSMutableArray* users;
+
 }
 -(id) init: (NSInteger) numUser andUsers:(NSMutableArray*) userList;
 -(UserModel*) getStartingUser;
