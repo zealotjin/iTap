@@ -16,11 +16,15 @@
     NSInteger* score;
     
 }
+
+@property NSString* name;
+@property NSInteger* score;
+
 -(id) init;
 -(void) setName: (NSString*) name;
 -(NSString*) getName;
 -(NSInteger*) getScore;
--(NSInteger*) addScore: (NSInteger*) score;
+-(void) addScore: (NSInteger*) scoreGained;
 -(BOOL) getTurn;
 -(void) noTurn;
 -(void) yesTurn;
