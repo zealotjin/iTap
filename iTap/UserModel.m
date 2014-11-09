@@ -17,8 +17,11 @@
     turn = NO;
     score = 0;    
     return self;
+
     
-    
+
+
+
 }
 
 
