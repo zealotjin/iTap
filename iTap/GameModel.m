@@ -9,5 +9,18 @@
 #import "GameModel.h"
 
 @implementation GameModel
-
+-(id) init: (NSInteger*) num andUsers:(NSMutableArray *)userList{
+    numUser = num;
+    users = userList;
+    return self;
+}
+-(UserModel*) getStartingUser{
+    return [users objectAtIndex:0];
+}
+-(NSInteger*) getStartTime: (NSInteger*) lowerBound to:(NSInteger *)upperBound{
+    return time;
+}
+-(NSString*) finish{
+    return @"finish";
+}
 @end

@@ -7,7 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "UserModel.h"
 @interface GameModel : NSObject
+{
+    @private
+    NSInteger* time;
+    NSInteger* numUser;
+    UserModel* startingUser;
+    NSMutableArray* users;
+}
+-(id) init: (NSInteger*) numUser andUsers:(NSMutableArray*) userList;
+-(UserModel*) getStartingUser;
+-(NSInteger*) getStartTime: (NSInteger*) lowerBound to:(NSInteger*) upperBound;
+-(NSString*) finish;
+
 
 @end
