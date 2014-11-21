@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TabView : UIView
+@interface TabView : UIView {
+    NSArray *circles;
+}
 
 @end
