@@ -7,6 +7,7 @@
 //
 
 #import "GameController.h"
+#import "BombModel.h"
 
 @interface GameController ()
 
@@ -19,6 +20,9 @@
     GameModel* gameModel = [GameModel getGameModel];
     NSLog(@"The gameModel: %ld",(long)[gameModel getTime]);
     // Do any additional setup after loading the view.
+    BombModel *bomb = [[BombModel alloc] init];
+  
+    NSLog((NSString*)
 }
 
 - (void)didReceiveMemoryWarning {

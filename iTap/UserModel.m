@@ -9,7 +9,6 @@
 #import "UserModel.h"
 
 @implementation UserModel
-@synthesize name;
 
 -(id) initWithName: (NSString*) UserName{
     
@@ -20,6 +19,11 @@
 
     //comment test!!
     //please work
+    
+    
+    
+    
+    //plezzzzzzz
     
 }
 
