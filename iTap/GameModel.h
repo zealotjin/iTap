@@ -9,8 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "UserModel.h"
 
+
+extern NSInteger *const EasyLevel;
+extern NSInteger *const MediumLevel;
+extern NSInteger *const MasterLevel;
+
+
 @interface GameModel : NSObject
 {
+    
     @private
     NSInteger time;
     NSInteger numUser;

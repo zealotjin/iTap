@@ -10,16 +10,16 @@
 
 @interface BombModel : NSObject
 {   @private
-    int *lowerTimeBound;
-    int *upperTimeBound;
-    NSTimeInterval *randomTime;
+    NSInteger lowerTimeBound;
+    NSInteger upperTimeBound;
+    NSTimeInterval randomTime;
     NSTimer* bombTimer;
-    NSInteger* bombStatus;
+    NSInteger bombStatus;
 }
 
-@property int *lowerTimeBound;
-@property int *upperTimeBound;
-@property int *randomTime;
+@property NSInteger lowerTimeBound;
+@property NSInteger upperTimeBound;
+@property NSInteger randomTime;
 @property NSInteger *bombStatus;
 @property NSTimer* bombTimer;
 @property BOOL explode;

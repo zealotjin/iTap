@@ -8,6 +8,10 @@
 
 #import "GameModel.h"
 
+NSInteger *const EasyLevel = 0;
+NSInteger *const MediumLevel = 1;
+NSInteger *const MasterLevel = 2;
+
 @implementation GameModel
 
 static GameModel* gameModel = nil;

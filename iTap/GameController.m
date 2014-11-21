@@ -20,6 +20,7 @@
     GameModel* gameModel = [GameModel getGameModel];
     NSLog(@"The gameModel: %ld",(long)[gameModel getTime]);
     // Do any additional setup after loading the view.
+
     BombModel *bomb = [[BombModel alloc] init];
   
 }

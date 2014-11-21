@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameModel.h"
 
 @interface ViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate> {
     NSArray *_level;
     NSArray *_player;
+    @private
+    NSInteger selectedPlayer;
+    NSInteger selectedLevel;
+    
 }
 
 @property (strong, nonatomic) IBOutlet UIPickerView* levelPicker;
@@ -23,5 +28,6 @@
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component;
 
+-(IBAction)onStartClick:(UIButton*) sender;
 @end
 
