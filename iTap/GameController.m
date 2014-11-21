@@ -18,8 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    BombModel *bomb = [[BombModel alloc] init];
- 
+    BombModel *bomb = [[BombModel alloc] initWithRandomTime];
+    NSInteger time = [NSNumber numberWithInteger: (NSInteger)[bomb randomTime]];
+    NSLog(@"bomb information %d", time);
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
