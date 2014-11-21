@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="144" y="225"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Controller-->
         <scene sceneID="KdG-MC-cHX">
             <objects>
-                <viewController id="sGP-u4-Vpz" sceneMemberID="viewController">
+                <viewController id="sGP-u4-Vpz" customClass="GameController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="svE-Db-WY8"/>
                         <viewControllerLayoutGuide type="bottom" id="cAb-AW-DYX"/>
