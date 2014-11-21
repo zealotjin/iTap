@@ -22,7 +22,8 @@
     
     self.levelPicker.delegate=self;
     self.playerPicker.delegate=self;
-    
+    selectedLevel = (NSInteger)EasyLevel;
+    selectedPlayer = [_player[0] integerValue];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,14 +60,43 @@ numberOfRowsInComponent:(NSInteger)component
     }
 }
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
- 
+    if(pickerView.tag == 1){    //player
+        switch(row){
+            case 0:
+                NSLog(@"one is selected");
+                selectedPlayer = [_player[0] integerValue];
+                break;
+            case 1:
+                NSLog(@"two is selected");
+                selectedPlayer = [_player[1] integerValue];
+                break;
+            case 2:
+                NSLog(@"three is selected");
+                selectedPlayer = [_player[2] integerValue];
+                break;
+        }
+    
+    }else{
+        switch(row){    //level
+            case 0:
+                NSLog(@"one is selected");
+                selectedLevel = (NSInteger)EasyLevel;
+                break;
+            case 1:
+                NSLog(@"two is selected");
+                selectedLevel = (NSInteger)MediumLevel;
+                break;
+            case 2:
+                NSLog(@"three is selected");
+                selectedLevel = (NSInteger)MasterLevel;
+                break;
+        }
+    }
 }
 -(IBAction)onStartClick:(UIButton*) sender{
     NSLog(@"Button clicked");
-    
-    NSInteger selectedLevel = [_levelPicker selectedRowInComponent:0];
-    NSInteger selectedPlayer = [_playerPicker selectedRowInComponent:0];
     NSLog(@"Selected level: %zd, Selected Player: %zd", selectedLevel, selectedPlayer);
+    
 }
 
 
