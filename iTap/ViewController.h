@@ -10,9 +10,11 @@
 
 @interface ViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate> {
     NSArray *_level;
+    NSArray *_player;
 }
 
-@property (strong, nonatomic) IBOutlet UIPickerView* picker;
+@property (strong, nonatomic) IBOutlet UIPickerView* levelPicker;
+@property (strong, nonatomic) IBOutlet UIPickerView* playerPicker;
 @property (strong, nonatomic) IBOutlet UISlider* slider;
 
 - (NSInteger)numberOfComponentsInPickerView: (UIPickerView *)pickerView;
