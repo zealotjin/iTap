@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		710E2F0B1A18232700EE3CC8 /* BombModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E2F0A1A18232700EE3CC8 /* BombModel.m */; };
 		C83F467F1A0EF27200897EB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C83F467E1A0EF27200897EB3 /* main.m */; };
 		C83F46821A0EF27200897EB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C83F46811A0EF27200897EB3 /* AppDelegate.m */; };
 		C83F46851A0EF27200897EB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C83F46841A0EF27200897EB3 /* ViewController.m */; };
@@ -30,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		710E2F091A18232700EE3CC8 /* BombModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BombModel.h; path = ../BombModel.h; sourceTree = "<group>"; };
+		710E2F0A1A18232700EE3CC8 /* BombModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BombModel.m; path = ../BombModel.m; sourceTree = "<group>"; };
 		C83F46791A0EF27200897EB3 /* iTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C83F467D1A0EF27200897EB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C83F467E1A0EF27200897EB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -90,6 +93,8 @@
 		C83F467B1A0EF27200897EB3 /* iTap */ = {
 			isa = PBXGroup;
 			children = (
+				710E2F091A18232700EE3CC8 /* BombModel.h */,
+				710E2F0A1A18232700EE3CC8 /* BombModel.m */,
 				C83F46801A0EF27200897EB3 /* AppDelegate.h */,
 				C83F46811A0EF27200897EB3 /* AppDelegate.m */,
 				C83F46831A0EF27200897EB3 /* ViewController.h */,
@@ -240,6 +245,7 @@
 				C83F46AA1A0EF3F200897EB3 /* GameController.m in Sources */,
 				C83F46821A0EF27200897EB3 /* AppDelegate.m in Sources */,
 				C83F467F1A0EF27200897EB3 /* main.m in Sources */,
+				710E2F0B1A18232700EE3CC8 /* BombModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
