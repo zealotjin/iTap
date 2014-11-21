@@ -19,8 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     BombModel *bomb = [[BombModel alloc] init];
-  
-    NSLog((NSString*)
+ 
 }
 
 - (void)didReceiveMemoryWarning {
