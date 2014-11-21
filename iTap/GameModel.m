@@ -9,6 +9,17 @@
 #import "GameModel.h"
 
 @implementation GameModel
+
+static GameModel* gameModel = nil;
+
++(id) getGameModel{
+    @synchronized(self){
+        if(gameModel == nil){
+            gameModel = [[self alloc]init];
+        }
+    }
+    return gameModel;
+}
 -(id) init: (NSInteger) num andUsers:(NSMutableArray *)userList{
     numUser = num;
     users = userList;

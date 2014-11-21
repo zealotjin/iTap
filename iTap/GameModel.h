@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "UserModel.h"
+
 @interface GameModel : NSObject
 {
     @private
@@ -19,7 +20,7 @@
     UserModel* userWithBomb;
 
 }
--(id) init: (NSInteger) numUser andUsers:(NSMutableArray*) userList;
++(id)getGameModel;
 -(UserModel*) getStartingUser;
 -(NSInteger) getTime;
 -(NSString*) finish;

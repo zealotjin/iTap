@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    GameModel* gameModel = [GameModel getGameModel];
+    NSLog(@"The gameModel: %ld",(long)[gameModel getTime]);
     // Do any additional setup after loading the view.
 }
 
