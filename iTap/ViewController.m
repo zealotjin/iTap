@@ -17,10 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-     _level = @[@"Easy", @"Medium", @"Master"];
+    _level = @[@"Easy", @"Medium", @"Master"];
+    _player = @[@"3", @"4", @"5"];
     
-    self.picker.dataSource = self;
-    self.picker.delegate = self;
+    self.levelPicker.delegate=self;
+    self.playerPicker.delegate=self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,14 +38,24 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView
 numberOfRowsInComponent:(NSInteger)component
 {
-    return _level.count;
+    if (pickerView.tag == 1) {
+        return _player.count;
+    }
+    else {
+        return _level.count;
+    }
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component
 {
-    return _level[row];
+    if (pickerView.tag == 1) {
+        return _player[row];
+    }
+    else {
+        return _level[row];
+    }
 }
 
 
