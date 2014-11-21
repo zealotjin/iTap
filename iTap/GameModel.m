@@ -13,10 +13,11 @@
     numUser = num;
     users = userList;
     time = 0;
+    turnTime = 2;
     return self;
 }
 -(UserModel*) getStartingUser{
-    return [users objectAtIndex:0];
+    return [users objectAtIndex:0];  //could be randomly chosen
 }
 -(NSInteger) getTime{
     return time;
@@ -25,8 +26,17 @@
     time =lowerBound + arc4random_uniform(upperBound - lowerBound + 1);
     return time;
 }
+
 -(NSString*) finish{
     //returns a string that includes the user who lost
-    return @"finish";
+    return [userWithBomb getName];
+}
+
+-(NSInteger) getTurnTimer{
+    return turnTime;
+}
+-(UserModel*) getNextTurn: (UserModel*) currUser{
+    int currIndex = [users indexOfObject:currUser];
+    return users[(currIndex+1)%([users count])];
 }
 @end
