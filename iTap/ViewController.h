@@ -11,6 +11,7 @@
 @interface ViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate> {
     NSArray *_level;
     NSArray *_player;
+    
 }
 
 @property (strong, nonatomic) IBOutlet UIPickerView* levelPicker;
@@ -23,5 +24,6 @@
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component;
 
+-(IBAction)onStartClick:(UIButton*) sender;
 @end
 

@@ -22,6 +22,7 @@
     
     self.levelPicker.delegate=self;
     self.playerPicker.delegate=self;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +57,16 @@ numberOfRowsInComponent:(NSInteger)component
     else {
         return _level[row];
     }
+}
+-(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+ 
+}
+-(IBAction)onStartClick:(UIButton*) sender{
+    NSLog(@"Button clicked");
+    
+    NSInteger selectedLevel = [_levelPicker selectedRowInComponent:0];
+    NSInteger selectedPlayer = [_playerPicker selectedRowInComponent:0];
+    NSLog(@"Selected level: %zd, Selected Player: %zd", selectedLevel, selectedPlayer);
 }
 
 

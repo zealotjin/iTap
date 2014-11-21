@@ -23,7 +23,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="sGP-u4-Vpz" kind="show" id="Qdv-28-Ei5"/>
+                                    <action selector="onStartClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mhf-LP-eIU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Difficulty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAw-uy-1cC">
@@ -70,7 +70,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cAb-AW-DYX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4GX-1e-mAl" customClass="TabView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
