@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TabView.h"
 #import "GameModel.h"
 @interface GameController : UIViewController
+{
+    TabView* view;
+    GameModel* model;
+}
 
+//@property (retain) IBOutlet TabView* view;
 
 
 @end

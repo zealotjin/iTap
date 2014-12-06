@@ -9,11 +9,9 @@
 #import "GameController.h"
 #import "BombModel.h"
 
-@interface GameController ()
-
-@end
-
 @implementation GameController
+
+//@synthesize view;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
