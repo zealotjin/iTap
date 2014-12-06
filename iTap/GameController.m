@@ -32,6 +32,9 @@
     //generates radomTime using lower and upper time bound
     
     bombTimer = [self getBombTimerWithUpperTimeBound: upperTimeBound andLowerTimeBound:lowerTimeBound];
+    
+    UIImage* image = [UIImage imageNamed: @"bomb.gif"];
+    [bombImage setImage: image];
     NSLog(@"asdfasfd");
 
 

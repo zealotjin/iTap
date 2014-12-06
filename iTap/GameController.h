@@ -23,6 +23,7 @@
     NSTimer* bombTimer;
     NSInteger bombStatus;
     BombModel *bomb;
+    UIImageView* bombImage;
 }
 
 //@property (retain) IBOutlet TabView* view;
