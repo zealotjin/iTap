@@ -32,7 +32,7 @@
     //generates radomTime using lower and upper time bound
     
     bombTimer = [self getBombTimerWithUpperTimeBound: upperTimeBound andLowerTimeBound:lowerTimeBound];
-    NSLog(@"asdfasfd");
+    
 
 
 }
