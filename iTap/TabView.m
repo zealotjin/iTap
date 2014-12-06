@@ -15,10 +15,12 @@
 
 - (void)drawRect:(CGRect)dirtyRect
 {
+    NSInteger num = [gameController askNumUsers];
     if ([gameController askNumUsers] == 3) {
         [self draw3Circles];
     }
     else {
+        NSLog(@"numUsers %i", num);
         [self draw4Circles];
     }
 }
