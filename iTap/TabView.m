@@ -11,7 +11,7 @@
 
 @implementation TabView
 
-//@synthesize gameController;
+@synthesize gameController;
 
 - (void)drawRect:(CGRect)dirtyRect
 {

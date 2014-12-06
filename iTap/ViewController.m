@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _level = @[@"Easy", @"Medium", @"Master"];
-    _player = @[@"3", @"4", @"5"];
+    _player = @[@"3", @"4"];
     
     self.levelPicker.delegate=self;
     self.playerPicker.delegate=self;
