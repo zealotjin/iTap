@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+
 //#import "TabView.h"
 #import "GameModel.h"
+#import "BombModel.h"
 
 @class TabView;
 
@@ -16,11 +18,23 @@
 {
     TabView* view;
     GameModel* gameModel;
+    NSInteger lowerTimeBound;
+    NSInteger upperTimeBound;
+    NSTimer* bombTimer;
+    NSInteger bombStatus;
+    BombModel *bomb;
 }
 
 //@property (retain) IBOutlet TabView* view;
 
+
 - (NSInteger)askNumUsers;
+
+
+
+
+-(void) changeBombStatus:(NSTimer *) timer;
+-(NSTimer*) getBombTimerWithUpperTimeBound:(NSInteger) upper andLowerTimeBound:(NSInteger) lower;
 
 
 @end
