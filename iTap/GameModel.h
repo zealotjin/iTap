@@ -34,4 +34,5 @@ extern NSInteger *const MasterLevel;
 -(NSInteger) setTime: (NSInteger) lowerBound to:(NSInteger)upperBound;
 -(NSInteger) getTurnTimer;
 -(UserModel*) getNextTurn: (UserModel*) currUser;
+-(NSInteger) getNumUsers;
 @end

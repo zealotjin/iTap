@@ -96,7 +96,8 @@ numberOfRowsInComponent:(NSInteger)component
 -(IBAction)onStartClick:(UIButton*) sender{
     NSLog(@"Button clicked");
     NSLog(@"Selected level: %zd, Selected Player: %zd", selectedLevel, selectedPlayer);
-    
+    GameModel* gameModel = [GameModel getGameModel];
+    //initialize num users, time, difficulty
 }
 
 
