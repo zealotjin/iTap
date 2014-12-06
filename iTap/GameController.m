@@ -9,16 +9,16 @@
 #import "GameController.h"
 #import "BombModel.h"
 
-@interface GameController ()
-
-@end
 
 @implementation GameController
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    gameModel = [GameModel getGameModel];
+    NSLog(@"The gameModel: %ld",(long)[gameModel getTime]);
     // Do any additional setup after loading the view.
+
     
     //creates a bomb with difficulty of 0
     
@@ -34,6 +34,7 @@
     bombTimer = [self getBombTimerWithUpperTimeBound: upperTimeBound andLowerTimeBound:lowerTimeBound];
     NSLog(@"asdfasfd");
 
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,8 +45,6 @@
 
 //This method creates a new BombTimer with Randomtime of range specified upper and lower
 //And set bombStatus as 0.
-
-
 
 
 //changeBombStatus function changes bombStatus and assignes new timeInterval to the bombTimer for the remaining stages.
@@ -103,10 +102,10 @@
 }
 
 
-
-
-
-
+- (NSInteger) askNumUsers {
+    NSLog(@"GameController getNumUsers: %zd", [gameModel getNumUsers]);
+    return [gameModel getNumUsers];
+}
 
 /*
 #pragma mark - Navigation

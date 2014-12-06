@@ -18,10 +18,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _level = @[@"Easy", @"Medium", @"Master"];
-    _player = @[@"3", @"4", @"5"];
+    _player = @[@"3", @"4"];
     
     self.levelPicker.delegate=self;
     self.playerPicker.delegate=self;
+    selectedLevel = (NSInteger)EasyLevel;
+    selectedPlayer = [_player[0] integerValue];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +58,62 @@ numberOfRowsInComponent:(NSInteger)component
     else {
         return _level[row];
     }
+}
+-(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    if(pickerView.tag == 1){    //player
+        switch(row){
+            case 0:
+                NSLog(@"one is selected");
+                selectedPlayer = [_player[0] integerValue];
+                break;
+            case 1:
+                NSLog(@"two is selected");
+                selectedPlayer = [_player[1] integerValue];
+                break;
+            case 2:
+                NSLog(@"three is selected");
+                selectedPlayer = [_player[2] integerValue];
+                break;
+        }
+    
+    }else{
+        switch(row){    //level
+            case 0:
+                NSLog(@"one is selected");
+                selectedLevel = (NSInteger)EasyLevel;
+                break;
+            case 1:
+                NSLog(@"two is selected");
+                selectedLevel = (NSInteger)MediumLevel;
+                break;
+            case 2:
+                NSLog(@"three is selected");
+                selectedLevel = (NSInteger)MasterLevel;
+                break;
+        }
+    }
+}
+-(IBAction)onStartClick:(UIButton*) sender{
+    NSLog(@"Button clicked");
+    NSLog(@"Selected level: %zd, Selected Player: %zd", selectedLevel, selectedPlayer);
+    GameModel* gameModel = [GameModel getGameModel];
+    //initialize num users, time, difficulty
+    [gameModel setNumUsers:selectedPlayer];
+    switch(selectedLevel){
+        case 0:
+            [gameModel setTime:(NSInteger)EasyLowerTime to: (NSInteger)MediumLowerTime];
+            break;
+        case 1:
+            [gameModel setTime:(NSInteger) MediumLowerTime to: (NSInteger)MasterLowerTime];
+            break;
+        case 2:
+            [gameModel setTime:(NSInteger)MasterLowerTime to: (NSInteger)MasterHighTime];
+            break;
+    }
+    NSInteger x = [gameModel getTime];
+    NSInteger y = [gameModel getNumUsers];
+    NSLog(@"Information in the gamemodel || numusers: %zd, Selected time: %zd", y, x);
+    
 }
 
 

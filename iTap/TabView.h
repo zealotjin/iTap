@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TabView : UIView
+@class GameController;
 
+@interface TabView : UIView {
+    NSArray *circles;
+    IBOutlet GameController* gameController;
+//    GameController* gameController;
+}
+
+@property (retain) IBOutlet GameController* gameController;
+
+- (void)draw3Circles;
+- (void)draw4Circles;
 @end
