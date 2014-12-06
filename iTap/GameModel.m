@@ -54,4 +54,7 @@ static GameModel* gameModel = nil;
     int currIndex = [users indexOfObject:currUser];
     return users[(currIndex+1)%([users count])];
 }
+-(NSInteger) getNumUsers{
+    return numUser;
+}
 @end
