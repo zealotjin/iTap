@@ -10,24 +10,18 @@
 
 @interface BombModel : NSObject
 {   @private
-    NSInteger lowerTimeBound;
-    NSInteger upperTimeBound;
-    NSTimeInterval randomTime;
-    NSTimer* bombTimer;
     NSInteger bombStatus;
+    NSInteger difficulty;
+    
 }
 
-@property NSInteger lowerTimeBound;
-@property NSInteger upperTimeBound;
-@property NSInteger randomTime;
-@property NSInteger *bombStatus;
-@property NSTimer* bombTimer;
-@property BOOL explode;
+@property NSInteger bombStatus;
+@property NSInteger difficulty;
 
 
--(id) initWithRandomTime;
--(void) countDown:(NSTimer *) timer;
--(void) resetBombTimer;
+-(id) initWithDifficulty:(NSInteger) diff;
+-(void) incrementBombStatus;
+
 
 
 
