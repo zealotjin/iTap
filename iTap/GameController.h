@@ -15,7 +15,7 @@
 @interface GameController : UIViewController
 {
     TabView* view;
-    GameModel* model;
+    GameModel* gameModel;
 }
 
 //@property (retain) IBOutlet TabView* view;

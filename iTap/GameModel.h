@@ -13,6 +13,10 @@
 extern NSInteger *const EasyLevel;
 extern NSInteger *const MediumLevel;
 extern NSInteger *const MasterLevel;
+extern NSInteger *const EasyLowerTime;
+extern NSInteger *const MediumLowerTime;
+extern NSInteger *const MasterLowerTime;
+extern NSInteger *const MasterHighTime;
 
 
 @interface GameModel : NSObject
@@ -31,8 +35,12 @@ extern NSInteger *const MasterLevel;
 -(UserModel*) getStartingUser;
 -(NSInteger) getTime;
 -(NSString*) finish;
--(NSInteger) setTime: (NSInteger) lowerBound to:(NSInteger)upperBound;
 -(NSInteger) getTurnTimer;
 -(UserModel*) getNextTurn: (UserModel*) currUser;
 -(NSInteger) getNumUsers;
+
+
+-(NSInteger) setTime: (NSInteger) lowerBound to:(NSInteger)upperBound;
+-(void) setNumUsers: (NSInteger) numUsers;
+
 @end

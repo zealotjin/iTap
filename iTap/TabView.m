@@ -11,7 +11,7 @@
 
 @implementation TabView
 
-@synthesize gameController;
+//@synthesize gameController;
 
 - (void)drawRect:(CGRect)dirtyRect
 {
@@ -20,6 +20,7 @@
         [self draw3Circles];
     }
     else {
+//        NSLog(@"gameCont: ")
         NSLog(@"numUsers %i", num);
         [self draw4Circles];
     }

@@ -14,7 +14,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    GameModel* gameModel = [GameModel getGameModel];
+    gameModel = [GameModel getGameModel];
     NSLog(@"The gameModel: %ld",(long)[gameModel getTime]);
     // Do any additional setup after loading the view.
 
@@ -28,7 +28,8 @@
 }
 
 - (NSInteger) askNumUsers {
-    return [model getNumUsers];
+    NSLog(@"GameController getNumUsers: %zd", [gameModel getNumUsers]);
+    return [gameModel getNumUsers];
 }
 
 /*

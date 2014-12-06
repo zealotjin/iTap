@@ -98,6 +98,22 @@ numberOfRowsInComponent:(NSInteger)component
     NSLog(@"Selected level: %zd, Selected Player: %zd", selectedLevel, selectedPlayer);
     GameModel* gameModel = [GameModel getGameModel];
     //initialize num users, time, difficulty
+    [gameModel setNumUsers:selectedPlayer];
+    switch(selectedLevel){
+        case 0:
+            [gameModel setTime:(NSInteger)EasyLowerTime to: (NSInteger)MediumLowerTime];
+            break;
+        case 1:
+            [gameModel setTime:(NSInteger) MediumLowerTime to: (NSInteger)MasterLowerTime];
+            break;
+        case 2:
+            [gameModel setTime:(NSInteger)MasterLowerTime to: (NSInteger)MasterHighTime];
+            break;
+    }
+    NSInteger x = [gameModel getTime];
+    NSInteger y = [gameModel getNumUsers];
+    NSLog(@"Information in the gamemodel || numusers: %zd, Selected time: %zd", y, x);
+    
 }
 
 
