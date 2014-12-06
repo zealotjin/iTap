@@ -23,10 +23,11 @@
     NSTimer* bombTimer;
     NSInteger bombStatus;
     BombModel *bomb;
+    UIImageView* bombImage;
 }
 
 //@property (retain) IBOutlet TabView* view;
-
+@property (strong, nonatomic) IBOutlet UIImageView* bombImage;
 
 - (NSInteger)askNumUsers;
 

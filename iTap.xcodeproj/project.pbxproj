@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		710E2F0E1A1F14E100EE3CC8 /* BombModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E2F0D1A1F14E100EE3CC8 /* BombModel.m */; };
+		71D8C5681A3306360006A54F /* loser.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71D8C5621A3306350006A54F /* loser.jpg */; };
+		71D8C5691A3306360006A54F /* status0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71D8C5631A3306350006A54F /* status0.jpg */; };
+		71D8C56A1A3306360006A54F /* status1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 71D8C5641A3306350006A54F /* status1.jpeg */; };
+		71D8C56B1A3306360006A54F /* status2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 71D8C5651A3306350006A54F /* status2.jpeg */; };
+		71D8C56C1A3306360006A54F /* status3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 71D8C5661A3306350006A54F /* status3.jpeg */; };
+		71D8C56D1A3306360006A54F /* status4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71D8C5671A3306360006A54F /* status4.jpg */; };
 		863B6D6F1A1F18E300B44AC5 /* TabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 863B6D6E1A1F18E300B44AC5 /* TabView.m */; };
 		C83F467F1A0EF27200897EB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C83F467E1A0EF27200897EB3 /* main.m */; };
 		C83F46821A0EF27200897EB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C83F46811A0EF27200897EB3 /* AppDelegate.m */; };
@@ -34,6 +40,12 @@
 /* Begin PBXFileReference section */
 		710E2F0C1A1F14E100EE3CC8 /* BombModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombModel.h; sourceTree = "<group>"; };
 		710E2F0D1A1F14E100EE3CC8 /* BombModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombModel.m; sourceTree = "<group>"; };
+		71D8C5621A3306350006A54F /* loser.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = loser.jpg; path = image/loser.jpg; sourceTree = "<group>"; };
+		71D8C5631A3306350006A54F /* status0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = status0.jpg; path = image/status0.jpg; sourceTree = "<group>"; };
+		71D8C5641A3306350006A54F /* status1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = status1.jpeg; path = image/status1.jpeg; sourceTree = "<group>"; };
+		71D8C5651A3306350006A54F /* status2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = status2.jpeg; path = image/status2.jpeg; sourceTree = "<group>"; };
+		71D8C5661A3306350006A54F /* status3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = status3.jpeg; path = image/status3.jpeg; sourceTree = "<group>"; };
+		71D8C5671A3306360006A54F /* status4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = status4.jpg; path = image/status4.jpg; sourceTree = "<group>"; };
 		863B6D6D1A1F18E300B44AC5 /* TabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabView.h; sourceTree = "<group>"; };
 		863B6D6E1A1F18E300B44AC5 /* TabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabView.m; sourceTree = "<group>"; };
 		C83F46791A0EF27200897EB3 /* iTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +133,12 @@
 		C83F467C1A0EF27200897EB3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				71D8C5621A3306350006A54F /* loser.jpg */,
+				71D8C5631A3306350006A54F /* status0.jpg */,
+				71D8C5641A3306350006A54F /* status1.jpeg */,
+				71D8C5651A3306350006A54F /* status2.jpeg */,
+				71D8C5661A3306350006A54F /* status3.jpeg */,
+				71D8C5671A3306360006A54F /* status4.jpg */,
 				C83F467D1A0EF27200897EB3 /* Info.plist */,
 				C83F467E1A0EF27200897EB3 /* main.m */,
 			);
@@ -224,9 +242,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71D8C5691A3306360006A54F /* status0.jpg in Resources */,
 				C83F46881A0EF27200897EB3 /* Main.storyboard in Resources */,
+				71D8C56D1A3306360006A54F /* status4.jpg in Resources */,
+				71D8C5681A3306360006A54F /* loser.jpg in Resources */,
+				71D8C56A1A3306360006A54F /* status1.jpeg in Resources */,
 				C83F468D1A0EF27200897EB3 /* LaunchScreen.xib in Resources */,
+				71D8C56B1A3306360006A54F /* status2.jpeg in Resources */,
 				C83F468A1A0EF27200897EB3 /* Images.xcassets in Resources */,
+				71D8C56C1A3306360006A54F /* status3.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

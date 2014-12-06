@@ -12,6 +12,7 @@
 
 @implementation GameController
 
+@synthesize bombImage;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +35,11 @@
     bombTimer = [self getBombTimerWithUpperTimeBound: upperTimeBound andLowerTimeBound:lowerTimeBound];
     
 
+    UIImage* image = [UIImage imageNamed: @"status0.jpg"];
+    [bombImage setImage: image];
+    
+
+
 
 }
 
@@ -52,38 +58,50 @@
 
 -(void) changeBombStatus:(NSTimer *) timer{
     //if bombStatus is 3(exploded) timer terminates.
+    UIImage* image;
     if(bombStatus == 3){
-        NSLog(@"timer done");
+        bombStatus++;
+        NSLog(@"assadfasf");
+        image = [UIImage imageNamed: @"status4.jpg"];
+        [bombImage setImage: image];
         [timer invalidate];
     }else{
         bombStatus++;
         NSInteger currState = bombStatus;
         switch(currState){
             case 1:
-                NSLog(@"case1");
-                timer = [NSTimer scheduledTimerWithTimeInterval: 30
-                                                         target:self
-                                                       selector:@selector(changeBombStatus:)
-                                                       userInfo:nil
-                                                        repeats:NO];
-                break;
-            case 2:
-                NSLog(@"case2");
+                image = [UIImage imageNamed: @"status1.jpeg"];
+                NSLog(@"10sec");
+                [bombImage setImage: image];
                 timer = [NSTimer scheduledTimerWithTimeInterval: 10
                                                          target:self
                                                        selector:@selector(changeBombStatus:)
                                                        userInfo:nil
                                                         repeats:NO];
                 break;
-            case 3:
-                NSLog(@"case3");
+            case 2:
+                NSLog(@"5sec");
+                image = [UIImage imageNamed: @"status2.jpeg"];
+                [bombImage setImage: image];
                 timer = [NSTimer scheduledTimerWithTimeInterval: 5
                                                          target:self
                                                        selector:@selector(changeBombStatus:)
                                                        userInfo:nil
                                                         repeats:NO];
                 break;
+            case 3:
+                NSLog(@"2sec");
+                image = [UIImage imageNamed: @"status3.jpeg"];
+                [bombImage setImage: image];
+                timer = [NSTimer scheduledTimerWithTimeInterval: 2
+                                                         target:self
+                                                       selector:@selector(changeBombStatus:)
+                                                       userInfo:nil
+                                                        repeats:NO];
+                break;
+                
         }
+        
     }
 }
 -(NSTimer*) getBombTimerWithUpperTimeBound:(NSInteger) upper andLowerTimeBound:(NSInteger) lower{

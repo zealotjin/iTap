@@ -14,6 +14,7 @@
     NSArray *circles;
     IBOutlet GameController* gameController;
 //    GameController* gameController;
+    
 }
 
 @property (retain) IBOutlet GameController* gameController;
