@@ -7,14 +7,15 @@
 //
 
 #import "TabView.h"
+#import "GameController.h"
 
 @implementation TabView
 
-//@synthesize gameController;
+@synthesize gameController;
 
 - (void)drawRect:(CGRect)dirtyRect
 {
-    if ([GameController getNumUsers] == 3) {
+    if ([gameController askNumUsers] == 3) {
         [self draw3Circles];
     }
     else {

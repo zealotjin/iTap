@@ -9,9 +9,8 @@
 #import "GameController.h"
 #import "BombModel.h"
 
-@implementation GameController
 
-//@synthesize view;
+@implementation GameController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,6 +25,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger) askNumUsers {
+    return [model getNumUsers];
 }
 
 /*

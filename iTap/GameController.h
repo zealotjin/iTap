@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TabView.h"
+//#import "TabView.h"
 #import "GameModel.h"
+
+@class TabView;
+
 @interface GameController : UIViewController
 {
     TabView* view;
@@ -16,6 +19,8 @@
 }
 
 //@property (retain) IBOutlet TabView* view;
+
+- (NSInteger)askNumUsers;
 
 
 @end
