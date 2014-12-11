@@ -23,21 +23,17 @@
     
     //creates a bomb with difficulty of 0
     
-    
     bomb = [[BombModel alloc] initWithDifficulty: 0];
 
     //specifiying lower and upper Time bound
     lowerTimeBound = 5;
     upperTimeBound = 10;
     
-    //generates radomTime using lower and upper time bound
-    
-    bombTimer = [self getBombTimerWithUpperTimeBound: upperTimeBound andLowerTimeBound:lowerTimeBound];
-    
-
     UIImage* image = [UIImage imageNamed: @"status0.jpg"];
     [bombImage setImage: image];
     
+    
+   
 
 
 
@@ -115,8 +111,42 @@
                                                      repeats:NO];
     return timer;
     
+}
+
+-(NSTimer*) getUserTimerWithTime: (NSInteger) time{
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:(NSTimeInterval) time
+                                                      target:self
+                                                    selector:@selector(changeBombStatus:)
+                                                    userInfo:nil
+                                                     repeats:NO];
+    return timer;
+
+}
+
+
+-(void)
+
+    if(first tap){
     
-    
+        //generates radomTime using lower and upper time bound
+        
+        bombTimer = [self getBombTimerWithUpperTimeBound: upperTimeBound andLowerTimeBound:lowerTimeBound];
+        
+        
+        //userTimer setup
+        userTime = [gameModel getUserTime];
+        userTimer = [self getUserTimerWithTime: userTime];
+    }else{
+        
+        if(correct){
+            resetUserTimer
+        }
+        else{
+            [userTimer invalidate];
+            [bombTimer invalidate];
+        }
+    }
+
 }
 
 

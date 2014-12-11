@@ -12,10 +12,11 @@ NSInteger *const EasyLevel = 0;
 NSInteger *const MediumLevel = 1;
 NSInteger *const MasterLevel = 2;
 
-NSInteger *const EasyLowerTime = 1;
-NSInteger *const MediumLowerTime = 3;
-NSInteger *const MasterLowerTime = 5;
-NSInteger *const MasterHighTime= 7;
+NSInteger *const EasyLowerTime = 3;
+NSInteger *const MediumLowerTime = 2;
+NSInteger *const MasterLowerTime = 1;
+
+NSInteger gameLevel;
 
 
 @implementation GameModel
@@ -37,6 +38,7 @@ static GameModel* gameModel = nil;
     users = userList;
     time = 0;
     turnTime = 2;
+    gameLevel = 
     return self;
 }
 -(UserModel*) getStartingUser{
@@ -69,6 +71,23 @@ static GameModel* gameModel = nil;
 
 -(void) setNumUsers: (NSInteger) numUsers{
     numUser = numUsers;
+}
+
+-(NSInteger) getGameLevel{
+    return gameLevel;
+}
+
+-(NSInteger *const) getUserTime{
+    
+    switch(gameLevel){
+        case 0:
+            return EasyLowerTime;
+        case 1:
+            return MediumLowerTime;
+        case 2:
+            return MasterLowerTime;
+    }
+    
 }
 
 @end

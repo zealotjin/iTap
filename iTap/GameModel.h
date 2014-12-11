@@ -29,6 +29,7 @@ extern NSInteger *const MasterHighTime;
     NSMutableArray* users;
     NSInteger turnTime;
     UserModel* userWithBomb;
+    NSInteger gameLevel;
 
 }
 +(id)getGameModel;
@@ -38,9 +39,12 @@ extern NSInteger *const MasterHighTime;
 -(NSInteger) getTurnTimer;
 -(UserModel*) getNextTurn: (UserModel*) currUser;
 -(NSInteger) getNumUsers;
+-(NSInteger) getGameLevel;
+-(NSInteger) getUserTime;
+
 
 
 -(NSInteger) setTime: (NSInteger) lowerBound to:(NSInteger)upperBound;
 -(void) setNumUsers: (NSInteger) numUsers;
-
+-(NSInteger) getUserTime;
 @end

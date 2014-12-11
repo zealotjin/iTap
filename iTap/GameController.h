@@ -24,6 +24,8 @@
     NSInteger bombStatus;
     BombModel *bomb;
     UIImageView* bombImage;
+    NSTimer* userTimer;
+    NSInteger userTime;
 }
 
 //@property (retain) IBOutlet TabView* view;
@@ -36,6 +38,7 @@
 
 -(void) changeBombStatus:(NSTimer *) timer;
 -(NSTimer*) getBombTimerWithUpperTimeBound:(NSInteger) upper andLowerTimeBound:(NSInteger) lower;
+-(NSTimer*) getUserTimer;
 
 
 @end
