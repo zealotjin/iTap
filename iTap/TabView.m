@@ -25,6 +25,12 @@
         NSLog(@"numUsers %i", num);
         [self draw4Circles];
     }
+    
+    UITapGestureRecognizer* singleTap = [[UITapGestureRecognizer alloc] initWithTarget:gameController action:@selector(handleSingleTap)];
+    
+    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTouchesRequired = 1;
+    [self addGestureRecognizer: singleTap];
 }
 
 - (void)draw3Circles

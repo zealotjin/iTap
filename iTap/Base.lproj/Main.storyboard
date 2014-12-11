@@ -89,13 +89,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
-                            <outlet property="gameController" destination="sGP-u4-Vpz" id="tvT-c5-9Ou"/>
+                            <outlet property="gameController" destination="sGP-u4-Vpz" id="Rzt-Eu-nN5"/>
                         </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="bombImage" destination="Nlv-Kv-3Ii" id="4f4-yO-bMs"/>
-                        <outlet property="view" destination="4GX-1e-mAl" id="iLq-BH-b4i"/>
+                        <outlet property="viewer" destination="4GX-1e-mAl" id="hv1-EH-lBd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ig-An-3Zd" userLabel="First Responder" sceneMemberID="firstResponder"/>

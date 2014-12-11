@@ -14,7 +14,7 @@
 
 @interface GameController : UIViewController
 {
-    IBOutlet TabView* view;
+    IBOutlet TabView* viewer;
     GameModel* gameModel;
     NSInteger lowerTimeBound;
     NSInteger upperTimeBound;
@@ -24,7 +24,7 @@
     UIImageView* bombImage;
 }
 
-@property (retain) IBOutlet TabView* view;
+@property (retain) IBOutlet TabView* viewer;
 @property (strong, nonatomic) IBOutlet UIImageView* bombImage;
 
 - (NSInteger)askNumUsers;

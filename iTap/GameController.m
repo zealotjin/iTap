@@ -12,11 +12,13 @@
 
 @implementation GameController
 
-@synthesize view;
+@synthesize viewer;
 @synthesize bombImage;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    viewer = [[TabView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     
     gameModel = [GameModel getGameModel];
     NSLog(@"The gameModel: %ld",(long)[gameModel getTime]);
@@ -39,27 +41,24 @@
     UIImage* image = [UIImage imageNamed: @"status0.jpg"];
     [bombImage setImage: image];
     
-    UITapGestureRecognizer* singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap)];
+
     
-    singleTap.numberOfTapsRequired = 1;
-    singleTap.numberOfTouchesRequired = 1;
-    [self.view addGestureRecognizer: singleTap];
-    
-    // 2 fingers pinch
-    UIPinchGestureRecognizer* doubleMove = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleMove:)];
-    
-    [self.view addGestureRecognizer: doubleMove];
-    CGPoint location = [singleTap locationInView:singleTap.view];
-    NSArray* circles = [view getCircles];
-    NSLog(@"circles %@", circles);
-    for (UIBezierPath* circ in circles) {
-        if ([circ containsPoint:location]) {
-            NSLog(@"asdfasdfasdfasdf");
-        }
-    }
+//    // 2 fingers pinch
+//    UIPinchGestureRecognizer* doubleMove = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleMove:)];
+//    
+//    [self.view addGestureRecognizer: doubleMove];
+//    CGPoint location = [singleTap locationInView:singleTap.view];
+//    NSArray* circles = [viewer getCircles];
+//    NSLog(@"circles %@", circles);
+//    for (UIBezierPath* circ in circles) {
+//        if ([circ containsPoint:location]) {
+//            NSLog(@"asdfasdfasdfasdf");
+//        }
+//    }
 }
 -(void)handleSingleTap{
     NSLog(@"Single Tap working");
+    
     
     
 }
