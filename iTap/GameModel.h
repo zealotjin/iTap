@@ -30,6 +30,8 @@ extern NSInteger *const MasterHighTime;
     NSInteger turnTime;
     UserModel* userWithBomb;
     NSInteger gameLevel;
+    NSInteger predictedNextTurn;
+
 
 }
 +(id)getGameModel;
@@ -41,7 +43,8 @@ extern NSInteger *const MasterHighTime;
 -(NSInteger) getNumUsers;
 -(NSInteger) getGameLevel;
 -(NSInteger) getUserTime;
-
+-(BOOL) validate: (NSInteger) userInput;
+-(NSInteger) calculateNextUser: (NSInteger) currentUser withNumTaps: (NSInteger) numTaps;
 
 
 -(NSInteger) setTime: (NSInteger) lowerBound to:(NSInteger)upperBound;

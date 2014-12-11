@@ -22,13 +22,8 @@
 
     
     //creates a bomb with difficulty of 0
-    
     bomb = [[BombModel alloc] initWithDifficulty: 0];
 
-    //specifiying lower and upper Time bound
-    lowerTimeBound = 5;
-    upperTimeBound = 10;
-    
     UIImage* image = [UIImage imageNamed: @"status0.jpg"];
     [bombImage setImage: image];
     
@@ -123,37 +118,68 @@
 
 }
 
+-(void) resetUserTimer:(NSTimer *) timer{
+    if(wrong){
+        image = [UIImage imageNamed: @"loser.jpg"];
+        [bombImage setImage: image];
+        [timer invalidate];
+    }
+    timer = [NSTimer scheduledTimerWithTimeInterval:(NSTimeInterval) userTime
+                                         target:self
+                                           selector:@selector(resetUserTimer:)
+                                       userInfo:nil
+                                        repeats:NO];
+    
+    
+    
+}
 
 -(void)
 
-    if(first tap){
+if(first tap){
+
+    //generates radomTime using lower and upper time bound
+    //specifiying lower and upper Time bound
+    lowerTimeBound = 5;
+    upperTimeBound = 10;
+    bombTimer = [self getBombTimerWithUpperTimeBound: upperTimeBound andLowerTimeBound:lowerTimeBound];
     
-        //generates radomTime using lower and upper time bound
+    //userTimer setup
+    userTime = [gameModel getUserTime];
+    userTimer = [self getUserTimerWithTime: userTime];
+    
+}else{
+    
+    if(correct){
+        resetUserTimer
         
-        bombTimer = [self getBombTimerWithUpperTimeBound: upperTimeBound andLowerTimeBound:lowerTimeBound];
-        
-        
-        //userTimer setup
-        userTime = [gameModel getUserTime];
-        userTimer = [self getUserTimerWithTime: userTime];
-    }else{
-        
-        if(correct){
-            resetUserTimer
-        }
-        else{
-            [userTimer invalidate];
-            [bombTimer invalidate];
-        }
     }
+    else{
+        [userTimer invalidate];
+        [bombTimer invalidate];
+    }
+    
+}
+
+
 
 }
+
+
+
 
 
 - (NSInteger) askNumUsers {
     NSLog(@"GameController getNumUsers: %zd", [gameModel getNumUsers]);
     return [gameModel getNumUsers];
 }
+
+
+-(void) circleClicked: (NSInteger) whichCircle withTaps: (NSInteger) numTaps{
+    NSLog(@"From the game controller got information %zd, %zd", whichCircle, numTaps);
+    
+}
+
 
 /*
 #pragma mark - Navigation

@@ -38,7 +38,7 @@ static GameModel* gameModel = nil;
     users = userList;
     time = 0;
     turnTime = 2;
-    gameLevel = 
+    gameLevel = 6;
     return self;
 }
 -(UserModel*) getStartingUser{
@@ -73,6 +73,7 @@ static GameModel* gameModel = nil;
     numUser = numUsers;
 }
 
+
 -(NSInteger) getGameLevel{
     return gameLevel;
 }
@@ -87,7 +88,15 @@ static GameModel* gameModel = nil;
         case 2:
             return MasterLowerTime;
     }
-    
+    return nil;
 }
 
+-(BOOL) validate: (NSInteger) userInput{
+    return YES;
+}
+    
+-(NSInteger) calculateNextUser: (NSInteger) currentUser withNumTaps: (NSInteger) numTaps{
+    return 0;
+
+}
 @end

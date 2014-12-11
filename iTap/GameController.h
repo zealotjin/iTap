@@ -33,12 +33,12 @@
 
 - (NSInteger)askNumUsers;
 
-
-
-
 -(void) changeBombStatus:(NSTimer *) timer;
 -(NSTimer*) getBombTimerWithUpperTimeBound:(NSInteger) upper andLowerTimeBound:(NSInteger) lower;
 -(NSTimer*) getUserTimer;
+-(void) resetUserTimer:(NSTimer *) timer;
+
+-(void) circleClicked: (NSInteger) whichCircle withTaps: (NSInteger) numTaps;
 
 
 @end
