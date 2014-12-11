@@ -71,4 +71,11 @@ static GameModel* gameModel = nil;
     numUser = numUsers;
 }
 
+-(BOOL) validate: (NSInteger) userInput{
+    return YES;
+}
+-(NSInteger) calculateNextUser: (NSInteger) currentUser withNumTaps: (NSInteger) numTaps{
+    return 0;
+}
+
 @end

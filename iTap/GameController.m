@@ -107,6 +107,13 @@
     return [gameModel getNumUsers];
 }
 
+
+-(void) circleClicked: (NSInteger) whichCircle withTaps: (NSInteger) numTaps{
+    NSLog(@"From the game controller got information %zd, %zd", whichCircle, numTaps);
+    
+}
+
+
 /*
 #pragma mark - Navigation
 

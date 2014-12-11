@@ -30,11 +30,8 @@
 
 - (NSInteger)askNumUsers;
 
-
-
-
 -(void) changeBombStatus:(NSTimer *) timer;
 -(NSTimer*) getBombTimerWithUpperTimeBound:(NSInteger) upper andLowerTimeBound:(NSInteger) lower;
-
+-(void) circleClicked: (NSInteger) whichCircle withTaps: (NSInteger) numTaps;
 
 @end

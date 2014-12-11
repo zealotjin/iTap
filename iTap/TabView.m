@@ -91,23 +91,29 @@
 //    UITouch *touch = touches.anyObject;
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint location = [touch locationInView:self];
-    
+    NSInteger finalTapCount = 0;
+    NSInteger circleTap = 0;
     for (UIBezierPath* circ in circles) {
         if ([circ containsPoint:location]) {
             if(touches.count == 1)
             {
                 NSLog(@"touched once... shy");
+                NSInteger index = [circles indexOfObject:circ];
+                NSLog(@"Circle that has been touched %zd", index);
+                finalTapCount = 1;
                 if([[touches anyObject] tapCount] == 2)
                 {
                     NSLog(@"touched twice... getting hot");
                     //            [self performSelector:@selector(doubleTap)
                     //                       withObject:nil
                     //                       afterDelay:0.35];
+                    finalTapCount = 2;
                 }
                 else if([[touches anyObject] tapCount] == 3)
                 {
                     NSLog(@"sexy time ");
                     //            [self trippleTap];
+                    finalTapCount = 3;
                 }
                 else
                 {
@@ -117,6 +123,10 @@
                     //                       afterDelay:0.35];
                 }
             }
+            
+            circleTap = [circles indexOfObject:circ];
+            NSLog(@"The circle: %zd was tapped %zd times", circleTap, finalTapCount);
+            [gameController circleClicked:circleTap withTaps:finalTapCount];
         }
     }
 }
