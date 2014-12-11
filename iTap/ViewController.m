@@ -97,6 +97,7 @@ numberOfRowsInComponent:(NSInteger)component
     NSLog(@"Button clicked");
     NSLog(@"Selected level: %zd, Selected Player: %zd", selectedLevel, selectedPlayer);
     GameModel* gameModel = [GameModel getGameModel];
+    [gameModel initialize];
     //initialize num users, time, difficulty
     [gameModel setNumUsers:selectedPlayer];
     switch(selectedLevel){

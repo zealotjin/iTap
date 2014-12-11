@@ -28,9 +28,13 @@ static GameModel* gameModel = nil;
     @synchronized(self){
         if(gameModel == nil){
             gameModel = [[self alloc]init];
+            
         }
     }
     return gameModel;
+}
+-(void) initialize{
+    predictedNextTurn = nil;
 }
 -(id) init: (NSInteger) num andUsers:(NSMutableArray *)userList{
     numUser = num;
@@ -59,9 +63,8 @@ static GameModel* gameModel = nil;
 -(NSInteger) getTurnTimer{
     return turnTime;
 }
--(UserModel*) getNextTurn: (UserModel*) currUser{
-    int currIndex = [users indexOfObject:currUser];
-    return users[(currIndex+1)%([users count])];
+-(NSInteger) getNextTurn{
+    return predictedNextTurn;
 }
 -(NSInteger) getNumUsers{
     return numUser;
@@ -71,7 +74,7 @@ static GameModel* gameModel = nil;
     numUser = numUsers;
 }
 
--(BOOL) validate: (NSInteger) userInput{
+-(BOOL) validate: (NSInteger)currUser withTap: (NSInteger) tapCount{
     return YES;
 }
 -(NSInteger) calculateNextUser: (NSInteger) currentUser withNumTaps: (NSInteger) numTaps{
