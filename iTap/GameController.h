@@ -8,15 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-//#import "TabView.h"
+#import "TabView.h"
 #import "GameModel.h"
 #import "BombModel.h"
 
-@class TabView;
-
 @interface GameController : UIViewController
 {
-    TabView* view;
+    IBOutlet TabView* view;
     GameModel* gameModel;
     NSInteger lowerTimeBound;
     NSInteger upperTimeBound;
@@ -26,7 +24,7 @@
     UIImageView* bombImage;
 }
 
-//@property (retain) IBOutlet TabView* view;
+@property (retain) IBOutlet TabView* view;
 @property (strong, nonatomic) IBOutlet UIImageView* bombImage;
 
 - (NSInteger)askNumUsers;

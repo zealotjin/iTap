@@ -12,10 +12,12 @@
 
 @implementation GameController
 
+@synthesize view;
 @synthesize bombImage;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     gameModel = [GameModel getGameModel];
     NSLog(@"The gameModel: %ld",(long)[gameModel getTime]);
     // Do any additional setup after loading the view.
@@ -34,13 +36,32 @@
     
     bombTimer = [self getBombTimerWithUpperTimeBound: upperTimeBound andLowerTimeBound:lowerTimeBound];
     
-
     UIImage* image = [UIImage imageNamed: @"status0.jpg"];
     [bombImage setImage: image];
     
-
-
-
+    UITapGestureRecognizer* singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap)];
+    
+    singleTap.numberOfTapsRequired = 1;
+    singleTap.numberOfTouchesRequired = 1;
+    [self.view addGestureRecognizer: singleTap];
+    
+    // 2 fingers pinch
+    UIPinchGestureRecognizer* doubleMove = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleMove:)];
+    
+    [self.view addGestureRecognizer: doubleMove];
+    CGPoint location = [singleTap locationInView:singleTap.view];
+    NSArray* circles = [view getCircles];
+    NSLog(@"circles %@", circles);
+    for (UIBezierPath* circ in circles) {
+        if ([circ containsPoint:location]) {
+            NSLog(@"asdfasdfasdfasdf");
+        }
+    }
+}
+-(void)handleSingleTap{
+    NSLog(@"Single Tap working");
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -128,16 +149,23 @@
 
 -(void) circleClicked: (NSInteger) whichCircle withTaps: (NSInteger) numTaps{
     NSLog(@"From the game controller got information %zd, %zd", whichCircle, numTaps);
-    if( [gameModel getNextTurn] == nil){
+    if( [gameModel getNextTurn] == -1){
         // this is the very beginning
-        // start the bomb timer
+        
+        //+++++++++++++++ start the bomb timer
+        
         NSLog(@"Start the game!");
+        [gameModel calculateNextUser:whichCircle withNumTaps:numTaps];
+        
+        //+++++++++++++++need to start user timer
     }else{
         if([gameModel validate:whichCircle withTap:numTaps]){
             //correct
-            //reset the user timer
+            NSLog(@"Correct");
+            //++++++++++++++++++reset the user timer
             
         }else{
+            NSLog(@"Wrong");
             //end the game because wrong move
             //the loser is the person with whichCircle
             

@@ -41,7 +41,7 @@ extern NSInteger *const MasterHighTime;
 -(NSInteger) getNextTurn;
 -(NSInteger) getNumUsers;
 -(BOOL) validate: (NSInteger)currUser withTap: (NSInteger) tapCount;
--(NSInteger) calculateNextUser: (NSInteger) currentUser withNumTaps: (NSInteger) numTaps;
+-(NSInteger) calculateNextUser: (NSInteger) currUser withNumTaps: (NSInteger) tapCount;
 
 -(NSInteger) setTime: (NSInteger) lowerBound to:(NSInteger)upperBound;
 -(void) setNumUsers: (NSInteger) numUsers;
