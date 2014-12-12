@@ -55,8 +55,7 @@
         [self draw3Circles];
         UILabel* firstPlayer = [[UILabel alloc]initWithFrame:CGRectMake(130,90,100,100)];
         UILabel* secondPlayer = [[UILabel alloc]initWithFrame:CGRectMake(50,380,100,100)];
-        UILabel* thirdPlayer = [[UILabel alloc]initWithFrame:CGRectMake(210,380,100,100)];
-        [firstPlayer setText:@"Player 1"];
+        UILabel* thirdPlayer = [[UILabel alloc]initWithFrame:CGRectMake(210,380,100,100)];        [firstPlayer setText:@"Player 1"];
         [secondPlayer setText:@"Player 2"];
         [thirdPlayer setText:@"Player 3"];
         [self addSubview:firstPlayer];
