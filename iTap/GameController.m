@@ -61,7 +61,7 @@
     UIImage* image;
     if(bombStatus == 3){
         bombStatus++;
-        NSLog(@"assadfasf");
+        NSLog(	@"assadfasf");
         image = [UIImage imageNamed: @"status4.jpg"];
         [bombImage setImage: image];
         [timer invalidate];
