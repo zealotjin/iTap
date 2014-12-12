@@ -14,11 +14,17 @@
     NSArray *circles;
     IBOutlet GameController* gameController;
 //    GameController* gameController;
+    NSInteger finalTapCount;
+    NSInteger circleTap;
     
 }
 
 @property (retain) IBOutlet GameController* gameController;
 
+//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
+
+
 - (void)draw3Circles;
 - (void)draw4Circles;
+- (NSArray*)getCircles;
 @end

@@ -36,7 +36,7 @@ static GameModel* gameModel = nil;
     return gameModel;
 }
 -(void) initialize{
-    predictedNextTurn = nil;
+    predictedNextTurn = -1;
 }
 -(id) init: (NSInteger) num andUsers:(NSMutableArray *)userList{
     numUser = num;
@@ -98,11 +98,34 @@ static GameModel* gameModel = nil;
 
 
 -(BOOL) validate: (NSInteger)currUser withTap: (NSInteger) tapCount{
-
-    return YES;
-}
+    BOOL output = NO;
+    if (currUser == predictedNextTurn){
+        output = YES;
+    }
+    [self calculateNextUser:currUser withNumTaps:tapCount];
     
--(NSInteger) calculateNextUser: (NSInteger) currentUser withNumTaps: (NSInteger) numTaps{
+    return output;
+}
+
+-(NSInteger) calculateNextUser: (NSInteger) currUser withNumTaps: (NSInteger) tapCount{
+    //update the predictedNextTurn
+    NSLog(@"!!!!!!!!!!!!!!!!!!!!tapcount %zd", tapCount);
+    switch (tapCount) {
+        case 1:
+            predictedNextTurn = (currUser + 1) % 3;
+            break;
+        case 2:
+            if(currUser == 0){
+                predictedNextTurn = 2;
+            }else{
+                predictedNextTurn = currUser - 1;
+            }
+            break;
+        case 3:
+            predictedNextTurn = (currUser +2 ) % 3;
+            break;
+    }
+    NSLog(@"the nextTurn should be: %zd", predictedNextTurn);
     return 0;
 
 }

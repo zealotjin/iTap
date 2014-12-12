@@ -9,14 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
+#import "TabView.h"
 #import "GameModel.h"
 #import "BombModel.h"
 
-@class TabView;
-
-@interface GameController : UIViewController
+@interface GameController : UIViewController <UIGestureRecognizerDelegate>
 {
-    TabView* view;
     GameModel* gameModel;
     NSInteger lowerTimeBound;
     NSInteger upperTimeBound;
@@ -30,9 +28,11 @@
     UIButton *replayButton;
     UIButton *backButton;
     BOOL clickedFirst;
+    UITouch* touches;
+    CGPoint touchPoint;
 }
 
-//@property (retain) IBOutlet TabView* view;
+@property (nonatomic, weak) IBOutlet TabView* viewer;
 @property (strong, nonatomic) IBOutlet UIImageView* bombImage;
 @property (strong, nonatomic) IBOutlet UIButton* replayButton;
 @property (strong, nonatomic) IBOutlet UIButton* backButton;
@@ -50,5 +50,8 @@
 
 -(void) circleClicked: (NSInteger) whichCircle withTaps: (NSInteger) numTaps;
 -(void) terminateGame;
+
+-(void)handleSingleTap;
+
 
 @end
