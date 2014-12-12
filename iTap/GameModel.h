@@ -35,19 +35,24 @@ extern NSInteger *const MasterHighTime;
 
 }
 +(id)getGameModel;
+-(void) initialize;
 -(UserModel*) getStartingUser;
 -(NSInteger) getTime;
 -(NSString*) finish;
 -(NSInteger) getTurnTimer;
--(UserModel*) getNextTurn: (UserModel*) currUser;
+-(NSInteger) getNextTurn;
 -(NSInteger) getNumUsers;
+
 -(NSInteger) getGameLevel;
 -(NSInteger) getUserTime;
--(BOOL) validate: (NSInteger) userInput;
+
+-(BOOL) validate: (NSInteger)currUser withTap: (NSInteger) tapCount;
+
 -(NSInteger) calculateNextUser: (NSInteger) currentUser withNumTaps: (NSInteger) numTaps;
 
 
 -(NSInteger) setTime: (NSInteger) lowerBound to:(NSInteger)upperBound;
 -(void) setNumUsers: (NSInteger) numUsers;
 -(NSInteger) getUserTime;
+
 @end
