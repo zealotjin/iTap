@@ -13,6 +13,40 @@
 
 @synthesize gameController;
 
+//- (instancetype)initWithCoder:(NSCoder *)aDecoder
+//{
+//    self = [super initWithCoder:aDecoder];
+//    if (self != nil) {
+//        
+//    }
+//    return self;
+//}
+
+- (void)awakeFromNib
+{
+    UITapGestureRecognizer* singleTap = [[UITapGestureRecognizer alloc] initWithTarget:gameController action:@selector(handleSingleTap)];
+    singleTap.delegate = gameController;
+    singleTap.numberOfTapsRequired = 1;
+    //        singleTap.numberOfTouchesRequired = 1;
+    [self addGestureRecognizer: singleTap];
+    
+    UITapGestureRecognizer* doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:gameController action:@selector(handleSingleTap)];
+    doubleTap.delegate = gameController;
+    doubleTap.numberOfTapsRequired = 2;
+    //        doubleTap.numberOfTouchesRequired = 2;
+    [self addGestureRecognizer: doubleTap];
+    
+    UITapGestureRecognizer* tripleTap = [[UITapGestureRecognizer alloc] initWithTarget:gameController action:@selector(handleSingleTap)];
+    tripleTap.delegate = gameController;
+    tripleTap.numberOfTapsRequired = 3;
+    //        tripleTap.numberOfTouchesRequired = 3;
+    [self addGestureRecognizer: tripleTap];
+    
+    [singleTap requireGestureRecognizerToFail:doubleTap];
+    [singleTap requireGestureRecognizerToFail:tripleTap];
+    [doubleTap requireGestureRecognizerToFail:tripleTap];
+}
+
 - (void)drawRect:(CGRect)dirtyRect
 {
     NSLog(@"draw rect called");
@@ -26,11 +60,7 @@
         [self draw4Circles];
     }
     
-    UITapGestureRecognizer* singleTap = [[UITapGestureRecognizer alloc] initWithTarget:gameController action:@selector(handleSingleTap)];
     
-    singleTap.numberOfTapsRequired = 1;
-    singleTap.numberOfTouchesRequired = 1;
-    [self addGestureRecognizer: singleTap];
 }
 
 - (void)draw3Circles
@@ -93,7 +123,7 @@
 }
 
 - (NSArray*) getCircles {
-    NSLog(@"view circles %@", circles);
+//    NSLog(@"view circles %@", circles);
     return circles;
 }
 
@@ -149,8 +179,6 @@
 //    [gameController circleClicked:circleTap withTaps:finalTapCount];
 //    }
 //}
-
-
 
 
 @end

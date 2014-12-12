@@ -12,9 +12,8 @@
 #import "GameModel.h"
 #import "BombModel.h"
 
-@interface GameController : UIViewController
+@interface GameController : UIViewController <UIGestureRecognizerDelegate>
 {
-    IBOutlet TabView* viewer;
     GameModel* gameModel;
     NSInteger lowerTimeBound;
     NSInteger upperTimeBound;
@@ -22,9 +21,11 @@
     NSInteger bombStatus;
     BombModel *bomb;
     UIImageView* bombImage;
+    UITouch* touches;
+    CGPoint touchPoint;
 }
 
-@property (retain) IBOutlet TabView* viewer;
+@property (nonatomic, weak) IBOutlet TabView* viewer;
 @property (strong, nonatomic) IBOutlet UIImageView* bombImage;
 
 - (NSInteger)askNumUsers;
@@ -32,5 +33,8 @@
 -(void) changeBombStatus:(NSTimer *) timer;
 -(NSTimer*) getBombTimerWithUpperTimeBound:(NSInteger) upper andLowerTimeBound:(NSInteger) lower;
 -(void) circleClicked: (NSInteger) whichCircle withTaps: (NSInteger) numTaps;
+
+-(void)handleSingleTap;
+
 
 @end

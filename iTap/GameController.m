@@ -18,10 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    viewer = [[TabView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+//    viewer = [[TabView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     
     gameModel = [GameModel getGameModel];
-    NSLog(@"The gameModel: %ld",(long)[gameModel getTime]);
+//    NSLog(@"The gameModel: %ld",(long)[gameModel getTime]);
     // Do any additional setup after loading the view.
 
     
@@ -58,6 +58,49 @@
 }
 -(void)handleSingleTap{
     NSLog(@"Single Tap working");
+    NSArray* circles = [self.viewer getCircles];
+    NSInteger touchCount = touches.tapCount;
+    CGPoint location = touchPoint;
+    NSInteger finalTapCount = 0;
+    NSInteger circleTap;
+    
+    for (UIBezierPath* circ in circles) {
+        if ([circ containsPoint:touchPoint]) {
+            if(touchCount > 0)
+            {
+                if(touchCount == 2)
+                {
+                    NSLog(@"touched twice... getting hot");
+//                    [self performSelector:@selector(handleDoubleTap)
+//                               withObject:nil
+//                               afterDelay:0.35];
+                    finalTapCount = 2;
+                }
+                else if(touchCount == 3)
+                {
+                    NSLog(@"sexy time ");
+//                    [self performSelector:@selector(handleTripleTap)
+//                               withObject:nil
+//                               afterDelay:0.35];
+                    finalTapCount = 3;
+                }
+                else
+                {
+//                    [self performSelector:@selector(handleSingleTap)
+//                               withObject:nil
+//                               afterDelay:0.35
+//                     ];
+                    NSLog(@"touch once");
+                    finalTapCount = 1;
+                }
+            }
+            
+            circleTap = [circles indexOfObject:circ];
+            NSLog(@"The circle: touch %zd times", finalTapCount);
+
+        }
+    }
+
     
     
     
@@ -183,5 +226,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    touches = touch;
+    touchPoint = [touch locationInView:self.view];
+    return YES;
+}
+
+- (void)dealloc
+{
+    for (UIGestureRecognizer *recognizer in self.view.gestureRecognizers)
+    {
+        recognizer.delegate = nil;
+        [recognizer removeTarget:self action:NULL];
+    }
+}
 
 @end
