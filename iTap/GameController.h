@@ -56,6 +56,6 @@
 -(void) terminateGame;
 
 -(void)handleSingleTap;
-
+- (NSTimer *)getUserTimerWithTIme:(NSInteger)time;
 
 @end

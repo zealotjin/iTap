@@ -67,12 +67,12 @@
                     NSLog(@"touch once");
                     finalTapCount = 1;
                 }
+                circleTap = [circles indexOfObject:circ];
+                NSLog(@"The circle: %zd touch %zd times", circleTap,finalTapCount);
+                [self circleClicked:circleTap withTaps:finalTapCount];
             }
-            circleTap = [circles indexOfObject:circ];
-            NSLog(@"The circle: %zd touch %zd times", circleTap,finalTapCount);
         }
     }
-    [self circleClicked:circleTap withTaps:finalTapCount];
 }
 
 - (void)didReceiveMemoryWarning {
