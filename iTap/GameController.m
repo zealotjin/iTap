@@ -17,6 +17,7 @@
 @synthesize replayButton;
 @synthesize backButton;
 @synthesize result;
+@synthesize taps;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -70,6 +71,7 @@
                 circleTap = [circles indexOfObject:circ];
                 NSLog(@"The circle: %zd touch %zd times", circleTap,finalTapCount);
                 [self circleClicked:circleTap withTaps:finalTapCount];
+                taps.text = [NSString stringWithFormat:@"%zd", finalTapCount];
             }
         }
     }
@@ -135,6 +137,7 @@
     image = [UIImage imageNamed: @"status4.jpg"];
     NSInteger loser = [gameModel getNextTurn]+1;
     result.text = [NSString stringWithFormat:@"The player %zd LOST", loser];
+    taps.text = @"Taps";
     [bombImage setImage: image];
     [bombTimer invalidate];
     [userTimer invalidate];
@@ -200,6 +203,7 @@
     bombTimer = nil;
     NSInteger loser = [gameModel getNextTurn]+1;
     result.text = [NSString stringWithFormat:@"The player %zd LOST", loser];
+    taps.text = @"Taps";
     [self terminateGame];
     bombStatus = 0;
     
@@ -247,6 +251,7 @@
             //end the game because wrong move
             //the loser is the person with whichCircle
             NSLog(@"WRONG MOVE!!!!!");
+            taps.text = @"Taps";
             [self userTimerDone: userTimer];
             NSInteger next = [gameModel getNextTurn]+1;
             NSInteger clicked = whichCircle + 1;
@@ -261,6 +266,7 @@
     [gameModel initialize];
     [bombTimer invalidate];
     [userTimer invalidate];
+    taps.text = @"Taps";
      UIImage* image = [UIImage imageNamed: @"status0.jpg"];
     [bombImage setImage: image];
     result.text = @"";

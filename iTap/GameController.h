@@ -40,6 +40,7 @@
 @property (strong, nonatomic) IBOutlet UIButton* replayButton;
 @property (strong, nonatomic) IBOutlet UIButton* backButton;
 @property (strong, nonatomic) IBOutlet UILabel* result;
+@property (strong, nonatomic) IBOutlet UILabel* taps;
 
 -(IBAction)replayButtonClicked:(UIButton*)sender;
 
