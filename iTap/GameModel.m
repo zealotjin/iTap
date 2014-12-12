@@ -101,8 +101,8 @@ static GameModel* gameModel = nil;
     BOOL output = NO;
     if (currUser == predictedNextTurn){
         output = YES;
+        [self calculateNextUser:currUser withNumTaps:tapCount];
     }
-    [self calculateNextUser:currUser withNumTaps:tapCount];
     
     return output;
 }

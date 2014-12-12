@@ -39,6 +39,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView* bombImage;
 @property (strong, nonatomic) IBOutlet UIButton* replayButton;
 @property (strong, nonatomic) IBOutlet UIButton* backButton;
+@property (strong, nonatomic) IBOutlet UILabel* result;
 
 -(IBAction)replayButtonClicked:(UIButton*)sender;
 

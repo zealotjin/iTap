@@ -16,6 +16,7 @@
 @synthesize bombImage;
 @synthesize replayButton;
 @synthesize backButton;
+@synthesize result;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -204,6 +205,8 @@
     gameTerminated = YES;
     replayButton.hidden = NO;
     backButton.hidden = NO;
+    NSInteger loser = [gameModel getNextTurn];
+    result.text = [NSString stringWithFormat:@"The player %zd LOST", loser];
   
 }
 
@@ -241,6 +244,9 @@
             //the loser is the person with whichCircle
             NSLog(@"WRONG MOVE!!!!!");
             [self userTimerDone: userTimer];
+            NSInteger next = [gameModel getNextTurn]+1;
+            NSInteger clicked = whichCircle + 1;
+            result.text = [NSString stringWithFormat:@"The players: %zd and %zd LOST", clicked, next];
             gameTerminated = YES;
         }
     }
@@ -253,6 +259,7 @@
     [userTimer invalidate];
      UIImage* image = [UIImage imageNamed: @"status0.jpg"];
     [bombImage setImage: image];
+    result.text = @"";
     bombStatus = 0;
     gameTerminated = NO;
     replayButton.hidden = YES;
