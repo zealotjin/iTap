@@ -96,10 +96,11 @@
             }
             
             circleTap = [circles indexOfObject:circ];
-            NSLog(@"The circle: touch %zd times", finalTapCount);
+            NSLog(@"The circle: %zd touch %zd times", circleTap,finalTapCount);
 
         }
     }
+    
 
     
     
