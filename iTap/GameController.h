@@ -30,6 +30,9 @@
     BOOL clickedFirst;
     UITouch* touches;
     CGPoint touchPoint;
+    
+    NSInteger finalTapCount;
+    NSInteger circleTap;
 }
 
 @property (nonatomic, weak) IBOutlet TabView* viewer;

@@ -188,6 +188,7 @@
                     <connections>
                         <outlet property="backButton" destination="8Ee-35-YEw" id="fOx-kj-X7R"/>
                         <outlet property="bombImage" destination="Nlv-Kv-3Ii" id="4f4-yO-bMs"/>
+                        <outlet property="replayButton" destination="0d3-FS-Oan" id="CLZ-Pd-Qrh"/>
                         <outlet property="viewer" destination="4GX-1e-mAl" id="hv1-EH-lBd"/>
                     </connections>
                 </viewController>
@@ -197,6 +198,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Q20-0O-Lgf"/>
+        <segue reference="siO-2j-hdb"/>
     </inferredMetricsTieBreakers>
 </document>

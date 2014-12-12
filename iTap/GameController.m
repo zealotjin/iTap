@@ -20,37 +20,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    viewer = [[TabView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    
     gameModel = [GameModel getGameModel];
-//    NSLog(@"The gameModel: %ld",(long)[gameModel getTime]);
-    // Do any additional setup after loading the view.
+
     replayButton.hidden = YES;
     backButton.hidden = YES;
-    //clickedFirst = YES;
     
-    //creates a bomb with difficulty of 0
     bomb = [[BombModel alloc] initWithDifficulty: 0];
     gameTerminated = NO;
     UIImage* image = [UIImage imageNamed: @"status0.jpg"];
     [bombImage setImage: image];
 
     //specifiying lower and upper Time bound
+    
+    
+    //==============need to get from gamemodel===============
     lowerTimeBound = 5;
     upperTimeBound = 10;
-    
-    //generates radomTime using lower and upper time bound
-    
-    bombTimer = [self getBombTimerWithUpperTimeBound: upperTimeBound andLowerTimeBound:lowerTimeBound];
+    //==============need to get from gamemodel===============
+
     
 }
 -(void)handleSingleTap{
-    NSLog(@"Single Tap working");
     NSArray* circles = [self.viewer getCircles];
     NSInteger touchCount = touches.tapCount;
     CGPoint location = touchPoint;
-    NSInteger finalTapCount = 0;
-    NSInteger circleTap;
+    finalTapCount = 0;
+    circleTap = 0;
     
     for (UIBezierPath* circ in circles) {
         if ([circ containsPoint:touchPoint]) {
@@ -59,40 +54,24 @@
                 if(touchCount == 2)
                 {
                     NSLog(@"touched twice... getting hot");
-//                    [self performSelector:@selector(handleDoubleTap)
-//                               withObject:nil
-//                               afterDelay:0.35];
                     finalTapCount = 2;
                 }
                 else if(touchCount == 3)
                 {
                     NSLog(@"sexy time ");
-//                    [self performSelector:@selector(handleTripleTap)
-//                               withObject:nil
-//                               afterDelay:0.35];
                     finalTapCount = 3;
                 }
                 else
                 {
-//                    [self performSelector:@selector(handleSingleTap)
-//                               withObject:nil
-//                               afterDelay:0.35
-//                     ];
                     NSLog(@"touch once");
                     finalTapCount = 1;
                 }
             }
-            
             circleTap = [circles indexOfObject:circ];
             NSLog(@"The circle: %zd touch %zd times", circleTap,finalTapCount);
-
         }
     }
-    
-
-    
-    
-    
+    [self circleClicked:circleTap withTaps:finalTapCount];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -143,8 +122,8 @@
                                                    userInfo:nil
                                                     repeats:NO];
         }else{
-            NSLog(@"Bome force end");
-            return;
+            NSLog(@"Bomb force end");
+            [bombTimer invalidate];
         }
     }
 }
@@ -244,15 +223,12 @@
         // start the bomb timer
         //generates radomTime using lower and upper time bound
         //specifiying lower and upper Time bound
-        lowerTimeBound = 5;
-        upperTimeBound = 10;
         bombTimer = [self getBombTimerWithUpperTimeBound: upperTimeBound andLowerTimeBound:lowerTimeBound];
         //userTimer setup
         userTime = [gameModel getUserTime];
         userTimer = [self getUserTimerWithTime: userTime];
         NSLog(@"Start the game!");
-
-
+        [gameModel calculateNextUser:whichCircle withNumTaps:numTaps];
     }else{
         if([gameModel validate:whichCircle withTap:numTaps] && gameTerminated == NO){
             [userTimer invalidate];
@@ -265,7 +241,7 @@
             //the loser is the person with whichCircle
             NSLog(@"WRONG MOVE!!!!!");
             [self userTimerDone: userTimer];
-            
+            gameTerminated = YES;
         }
     }
 }
