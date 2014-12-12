@@ -53,13 +53,22 @@
     NSInteger num = [gameController askNumUsers];
     if ([gameController askNumUsers] == 3) {
         [self draw3Circles];
+        UILabel* firstPlayer = [[UILabel alloc]initWithFrame:CGRectMake(130,90,100,100)];
+        UILabel* secondPlayer = [[UILabel alloc]initWithFrame:CGRectMake(50,380,100,100)];
+        UILabel* thirdPlayer = [[UILabel alloc]initWithFrame:CGRectMake(210,380,100,100)];
+        [firstPlayer setText:@"Player 1"];
+        [secondPlayer setText:@"Player 2"];
+        [thirdPlayer setText:@"Player 3"];
+        [self addSubview:firstPlayer];
+        [self addSubview:secondPlayer];
+        [self addSubview:thirdPlayer];
     }
     else {
 //        NSLog(@"gameCont: ")
         NSLog(@"numUsers %i", num);
         [self draw4Circles];
     }
-    
+
     
     
 }
@@ -70,21 +79,21 @@
     UIBezierPath* circlePath0 = [UIBezierPath bezierPathWithOvalInRect: boundsRect0];
     
     [circlePath0 setLineWidth:(CGFloat)4.0];
-    [circlePath0 fill];
+//    [circlePath0 fill];
     [circlePath0 stroke];
     
     CGRect boundsRect1 = CGRectMake(30,380, 100,100);
     UIBezierPath* circlePath1 = [UIBezierPath bezierPathWithOvalInRect: boundsRect1];
     
     [circlePath1 setLineWidth:(CGFloat)4.0];
-    [circlePath1 fill];
+//    [circlePath1 fill];
     [circlePath1 stroke];
     
     CGRect boundsRect2 = CGRectMake(190, 380, 100,100);
     UIBezierPath* circlePath2 = [UIBezierPath bezierPathWithOvalInRect: boundsRect2];
     
     [circlePath2 setLineWidth:(CGFloat)4.0];
-    [circlePath2 fill];
+//    [circlePath2 fill];
     [circlePath2 stroke];
     
     circles = @[circlePath0, circlePath1, circlePath2];
@@ -96,28 +105,28 @@
     UIBezierPath* circlePath0 = [UIBezierPath bezierPathWithOvalInRect: boundsRect0];
     
     [circlePath0 setLineWidth:(CGFloat)4.0];
-    [circlePath0 fill];
+//    [circlePath0 fill];
     [circlePath0 stroke];
     
     CGRect boundsRect1 = CGRectMake(30,380, 100,100);
     UIBezierPath* circlePath1 = [UIBezierPath bezierPathWithOvalInRect: boundsRect1];
     
     [circlePath1 setLineWidth:(CGFloat)4.0];
-    [circlePath1 fill];
+//    [circlePath1 fill];
     [circlePath1 stroke];
     
     CGRect boundsRect2 = CGRectMake(190, 100, 100,100);
     UIBezierPath* circlePath2 = [UIBezierPath bezierPathWithOvalInRect: boundsRect2];
     
     [circlePath2 setLineWidth:(CGFloat)4.0];
-    [circlePath2 fill];
+//    [circlePath2 fill];
     [circlePath2 stroke];
     
     CGRect boundsRect3 = CGRectMake(190, 380, 100,100);
     UIBezierPath* circlePath3 = [UIBezierPath bezierPathWithOvalInRect: boundsRect3];
     
     [circlePath3 setLineWidth:(CGFloat)4.0];
-    [circlePath3 fill];
+//    [circlePath3 fill];
     [circlePath3 stroke];
     
     circles = @[circlePath0, circlePath1, circlePath2, circlePath3];
