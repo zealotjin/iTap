@@ -49,7 +49,7 @@
     circleTap = 0;
     
     for (UIBezierPath* circ in circles) {
-        if ([circ containsPoint:touchPoint]) {
+        if ([circ containsPoint:location]) {
             if(touchCount > 0)
             {
                 if(touchCount == 2)
@@ -133,9 +133,12 @@
     NSLog(@"-------------Bomb Exploded-----------------");
     UIImage* image;
     image = [UIImage imageNamed: @"status4.jpg"];
+    NSInteger loser = [gameModel getNextTurn]+1;
+    result.text = [NSString stringWithFormat:@"The player %zd LOST", loser];
     [bombImage setImage: image];
     [bombTimer invalidate];
     [userTimer invalidate];
+    bombStatus = 4;
     [self terminateGame];
 
 }
@@ -195,7 +198,10 @@
     [bombImage setImage: image];
     [userTimer invalidate];
     bombTimer = nil;
+    NSInteger loser = [gameModel getNextTurn]+1;
+    result.text = [NSString stringWithFormat:@"The player %zd LOST", loser];
     [self terminateGame];
+    bombStatus = 0;
     
 }
 
@@ -205,8 +211,6 @@
     gameTerminated = YES;
     replayButton.hidden = NO;
     backButton.hidden = NO;
-    NSInteger loser = [gameModel getNextTurn];
-    result.text = [NSString stringWithFormat:@"The player %zd LOST", loser];
   
 }
 
@@ -264,9 +268,7 @@
     gameTerminated = NO;
     replayButton.hidden = YES;
     backButton.hidden = YES;
-   
-    
-    
+
 }
        
 
