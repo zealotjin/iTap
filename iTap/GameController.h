@@ -8,15 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-//#import "TabView.h"
+
+#import "TabView.h"
 #import "GameModel.h"
 #import "BombModel.h"
 
-@class TabView;
-
-@interface GameController : UIViewController
+@interface GameController : UIViewController <UIGestureRecognizerDelegate>
 {
-    TabView* view;
     GameModel* gameModel;
     NSInteger lowerTimeBound;
     NSInteger upperTimeBound;
@@ -24,15 +22,40 @@
     NSInteger bombStatus;
     BombModel *bomb;
     UIImageView* bombImage;
+    NSTimer* userTimer;
+    NSInteger userTime;
+    NSInteger gameTerminated;
+    UIButton *replayButton;
+    UIButton *backButton;
+    BOOL clickedFirst;
+    UITouch* touches;
+    CGPoint touchPoint;
+    
+    NSInteger finalTapCount;
+    NSInteger circleTap;
 }
 
-//@property (retain) IBOutlet TabView* view;
+@property (nonatomic, weak) IBOutlet TabView* viewer;
 @property (strong, nonatomic) IBOutlet UIImageView* bombImage;
+@property (strong, nonatomic) IBOutlet UIButton* replayButton;
+@property (strong, nonatomic) IBOutlet UIButton* backButton;
+@property (strong, nonatomic) IBOutlet UILabel* result;
+
+-(IBAction)replayButtonClicked:(UIButton*)sender;
 
 - (NSInteger)askNumUsers;
 
 -(void) changeBombStatus:(NSTimer *) timer;
 -(NSTimer*) getBombTimerWithUpperTimeBound:(NSInteger) upper andLowerTimeBound:(NSInteger) lower;
+-(NSTimer*) getUserTimerWithTIme:(NSInteger) time;
+-(void) explodeBomb;
+-(void) resetUserTimer:(NSTimer *) timer;
+-(void) userTimerDone:(NSTimer *) timer;
+
 -(void) circleClicked: (NSInteger) whichCircle withTaps: (NSInteger) numTaps;
+-(void) terminateGame;
+
+-(void)handleSingleTap;
+
 
 @end

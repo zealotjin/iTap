@@ -12,35 +12,67 @@
 
 @implementation GameController
 
+@synthesize viewer;
 @synthesize bombImage;
+@synthesize replayButton;
+@synthesize backButton;
+@synthesize result;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     gameModel = [GameModel getGameModel];
-    NSLog(@"The gameModel: %ld",(long)[gameModel getTime]);
-    // Do any additional setup after loading the view.
 
-    
-    //creates a bomb with difficulty of 0
-    
+    replayButton.hidden = YES;
+    backButton.hidden = YES;
     
     bomb = [[BombModel alloc] initWithDifficulty: 0];
-
-    //specifiying lower and upper Time bound
-    lowerTimeBound = 5;
-    upperTimeBound = 10;
-    
-    //generates radomTime using lower and upper time bound
-    
-    bombTimer = [self getBombTimerWithUpperTimeBound: upperTimeBound andLowerTimeBound:lowerTimeBound];
-    
-
+    gameTerminated = NO;
     UIImage* image = [UIImage imageNamed: @"status0.jpg"];
     [bombImage setImage: image];
+
+    //specifiying lower and upper Time bound
     
+    
+    //==============need to get from gamemodel===============
+    lowerTimeBound = 5;
+    upperTimeBound = 10;
+    //==============need to get from gamemodel===============
 
-
-
+    
+}
+-(void)handleSingleTap{
+    NSArray* circles = [self.viewer getCircles];
+    NSInteger touchCount = touches.tapCount;
+    CGPoint location = touchPoint;
+    finalTapCount = 0;
+    circleTap = 0;
+    
+    for (UIBezierPath* circ in circles) {
+        if ([circ containsPoint:touchPoint]) {
+            if(touchCount > 0)
+            {
+                if(touchCount == 2)
+                {
+                    NSLog(@"touched twice... getting hot");
+                    finalTapCount = 2;
+                }
+                else if(touchCount == 3)
+                {
+                    NSLog(@"sexy time ");
+                    finalTapCount = 3;
+                }
+                else
+                {
+                    NSLog(@"touch once");
+                    finalTapCount = 1;
+                }
+            }
+            circleTap = [circles indexOfObject:circ];
+            NSLog(@"The circle: %zd touch %zd times", circleTap,finalTapCount);
+        }
+    }
+    [self circleClicked:circleTap withTaps:finalTapCount];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,65 +91,135 @@
 -(void) changeBombStatus:(NSTimer *) timer{
     //if bombStatus is 3(exploded) timer terminates.
     UIImage* image;
+<<<<<<< HEAD
     if(bombStatus == 3){
         bombStatus++;
         NSLog(	@"assadfasf");
         image = [UIImage imageNamed: @"status4.jpg"];
         [bombImage setImage: image];
         [timer invalidate];
+=======
+    NSTimeInterval newTime = 0;
+    bombStatus++;
+    
+    if(bombStatus ==4){
+        [self explodeBomb: bombTimer];
+>>>>>>> c0e76e7703e45383f60cdaba14242ead2ed1bff5
     }else{
-        bombStatus++;
-        NSInteger currState = bombStatus;
-        switch(currState){
+        switch(bombStatus){
             case 1:
+                
                 image = [UIImage imageNamed: @"status1.jpeg"];
-                NSLog(@"10sec");
-                [bombImage setImage: image];
-                timer = [NSTimer scheduledTimerWithTimeInterval: 10
-                                                         target:self
-                                                       selector:@selector(changeBombStatus:)
-                                                       userInfo:nil
-                                                        repeats:NO];
+                newTime = 10;
                 break;
             case 2:
-                NSLog(@"5sec");
+                
                 image = [UIImage imageNamed: @"status2.jpeg"];
-                [bombImage setImage: image];
-                timer = [NSTimer scheduledTimerWithTimeInterval: 5
-                                                         target:self
-                                                       selector:@selector(changeBombStatus:)
-                                                       userInfo:nil
-                                                        repeats:NO];
+                newTime = 5;
                 break;
             case 3:
-                NSLog(@"2sec");
-                image = [UIImage imageNamed: @"status3.jpeg"];
-                [bombImage setImage: image];
-                timer = [NSTimer scheduledTimerWithTimeInterval: 2
-                                                         target:self
-                                                       selector:@selector(changeBombStatus:)
-                                                       userInfo:nil
-                                                        repeats:NO];
-                break;
                 
+                image = [UIImage imageNamed: @"status3.jpeg"];
+                newTime = 2;
+                break;
         }
-        
+        if(gameTerminated == NO){
+            NSLog(@"bombTimer has been changed!");
+            [bombImage setImage: image];
+            bombTimer = [NSTimer scheduledTimerWithTimeInterval: newTime
+                                                     target:self
+                                                   selector:@selector(changeBombStatus:)
+                                                   userInfo:nil
+                                                    repeats:NO];
+        }else{
+            NSLog(@"Bomb force end");
+            [bombTimer invalidate];
+        }
     }
 }
+
+-(void) explodeBomb: (NSTimer *) timer{
+    NSLog(@"-------------Bomb Exploded-----------------");
+    UIImage* image;
+    image = [UIImage imageNamed: @"status4.jpg"];
+    [bombImage setImage: image];
+    [bombTimer invalidate];
+    [userTimer invalidate];
+    [self terminateGame];
+
+}
 -(NSTimer*) getBombTimerWithUpperTimeBound:(NSInteger) upper andLowerTimeBound:(NSInteger) lower{
-    
     bombStatus = 0;
     NSTimeInterval randomTime = lower + arc4random() % (upper - lower);
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:randomTime
+    if(gameTerminated == NO){
+        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:randomTime
+                                                          target:self
+                                                        selector:@selector(changeBombStatus:)
+                                                        userInfo:nil
+                                                         repeats:NO];
+        return timer;
+    }
+    return nil;
+}
+
+-(NSTimer*) getUserTimerWithTime: (NSInteger) time{
+    if(!gameTerminated){
+        NSLog(@"**********Got user Time*************");
+        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:(NSTimeInterval) time
                                                       target:self
-                                                    selector:@selector(changeBombStatus:)
+                                                        selector:@selector(userTimerDone:)
                                                     userInfo:nil
                                                      repeats:NO];
-    return timer;
+        //clickedFirst = NO;
+        return timer;
+    }else{
+        return nil;
+    }
+}
+
+-(void) resetUserTimer: (NSTimer*) timer{
+    if(!gameTerminated){
+        NSLog(@"**********RESET USER Time*************");
+        userTimer =  [NSTimer scheduledTimerWithTimeInterval:(NSTimeInterval) userTime
+                                                          target:self
+                                              selector:@selector(userTimerDone:)
+                                                        userInfo:nil
+                                                         repeats:NO];
+
+    }else{
+        [self userTimerDone: userTimer];
+    }
+
+}
+
+
+
+
+
     
-    
+-(void) userTimerDone:(NSTimer *) timer{
+    NSLog(@"-------------User Timer Done-----------------");
+    UIImage* image;
+    image = [UIImage imageNamed: @"loser.jpg"];
+    [bombImage setImage: image];
+    [userTimer invalidate];
+    bombTimer = nil;
+    [self terminateGame];
     
 }
+
+
+-(void) terminateGame{
+    NSLog(@"-------------TERMINATED-----------------");
+    gameTerminated = YES;
+    replayButton.hidden = NO;
+    backButton.hidden = NO;
+    NSInteger loser = [gameModel getNextTurn];
+    result.text = [NSString stringWithFormat:@"The player %zd LOST", loser];
+  
+}
+
+
 
 
 - (NSInteger) askNumUsers {
@@ -128,23 +230,57 @@
 
 -(void) circleClicked: (NSInteger) whichCircle withTaps: (NSInteger) numTaps{
     NSLog(@"From the game controller got information %zd, %zd", whichCircle, numTaps);
-    if( [gameModel getNextTurn] == nil){
+    if( [gameModel getNextTurn] == -1 && gameTerminated == NO){
         // this is the very beginning
         // start the bomb timer
+        //generates radomTime using lower and upper time bound
+        //specifiying lower and upper Time bound
+        bombTimer = [self getBombTimerWithUpperTimeBound: upperTimeBound andLowerTimeBound:lowerTimeBound];
+        //userTimer setup
+        userTime = [gameModel getUserTime];
+        userTimer = [self getUserTimerWithTime: userTime];
         NSLog(@"Start the game!");
+        [gameModel calculateNextUser:whichCircle withNumTaps:numTaps];
     }else{
-        if([gameModel validate:whichCircle withTap:numTaps]){
-            //correct
-            //reset the user timer
+        if([gameModel validate:whichCircle withTap:numTaps] && gameTerminated == NO){
+            [userTimer invalidate];
+            [self resetUserTimer:userTimer];
+            NSLog(@"RESET USER TIMER");
             
         }else{
+            NSLog(@"Wrong");
             //end the game because wrong move
             //the loser is the person with whichCircle
-            
+            NSLog(@"WRONG MOVE!!!!!");
+            [self userTimerDone: userTimer];
+            NSInteger next = [gameModel getNextTurn]+1;
+            NSInteger clicked = whichCircle + 1;
+            result.text = [NSString stringWithFormat:@"The players: %zd and %zd LOST", clicked, next];
+            gameTerminated = YES;
         }
-       
     }
 }
+
+-(IBAction)replayButtonClicked:(UIButton*)sender{
+    NSLog(@"replay Button clicked");
+    [gameModel initialize];
+    [bombTimer invalidate];
+    [userTimer invalidate];
+     UIImage* image = [UIImage imageNamed: @"status0.jpg"];
+    [bombImage setImage: image];
+    result.text = @"";
+    bombStatus = 0;
+    gameTerminated = NO;
+    replayButton.hidden = YES;
+    backButton.hidden = YES;
+   
+    
+    
+}
+       
+
+
+
 
 
 /*
@@ -156,5 +292,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    touches = touch;
+    touchPoint = [touch locationInView:self.view];
+    return YES;
+}
+
+- (void)dealloc
+{
+    for (UIGestureRecognizer *recognizer in self.view.gestureRecognizers)
+    {
+        recognizer.delegate = nil;
+        [recognizer removeTarget:self action:NULL];
+    }
+}
 
 @end

@@ -12,10 +12,12 @@ NSInteger *const EasyLevel = 0;
 NSInteger *const MediumLevel = 1;
 NSInteger *const MasterLevel = 2;
 
-NSInteger *const EasyLowerTime = 1;
-NSInteger *const MediumLowerTime = 3;
-NSInteger *const MasterLowerTime = 5;
-NSInteger *const MasterHighTime= 7;
+NSInteger *const EasyLowerTime = 3;
+NSInteger *const MediumLowerTime = 2;
+NSInteger *const MasterLowerTime = 1;
+NSInteger *const MasterHighTime = 7;
+
+NSInteger gameLevel;
 
 
 @implementation GameModel
@@ -34,13 +36,14 @@ static GameModel* gameModel = nil;
     return gameModel;
 }
 -(void) initialize{
-    predictedNextTurn = nil;
+    predictedNextTurn = -1;
 }
 -(id) init: (NSInteger) num andUsers:(NSMutableArray *)userList{
     numUser = num;
     users = userList;
     time = 0;
     turnTime = 2;
+    gameLevel = 6;
     return self;
 }
 -(UserModel*) getStartingUser{
@@ -74,11 +77,56 @@ static GameModel* gameModel = nil;
     numUser = numUsers;
 }
 
--(BOOL) validate: (NSInteger)currUser withTap: (NSInteger) tapCount{
-    return YES;
-}
--(NSInteger) calculateNextUser: (NSInteger) currentUser withNumTaps: (NSInteger) numTaps{
-    return 0;
+
+
+-(NSInteger) getGameLevel{
+    return gameLevel;
 }
 
+-(NSInteger *const) getUserTime{
+    
+    switch(gameLevel){
+        case 0:
+            return EasyLowerTime;
+        case 1:
+            return MediumLowerTime;
+        case 2:
+            return MasterLowerTime;
+    }
+    return nil;
+}
+
+
+-(BOOL) validate: (NSInteger)currUser withTap: (NSInteger) tapCount{
+    BOOL output = NO;
+    if (currUser == predictedNextTurn){
+        output = YES;
+        [self calculateNextUser:currUser withNumTaps:tapCount];
+    }
+    
+    return output;
+}
+
+-(NSInteger) calculateNextUser: (NSInteger) currUser withNumTaps: (NSInteger) tapCount{
+    //update the predictedNextTurn
+    NSLog(@"!!!!!!!!!!!!!!!!!!!!tapcount %zd", tapCount);
+    switch (tapCount) {
+        case 1:
+            predictedNextTurn = (currUser + 1) % 3;
+            break;
+        case 2:
+            if(currUser == 0){
+                predictedNextTurn = 2;
+            }else{
+                predictedNextTurn = currUser - 1;
+            }
+            break;
+        case 3:
+            predictedNextTurn = (currUser +2 ) % 3;
+            break;
+    }
+    NSLog(@"the nextTurn should be: %zd", predictedNextTurn);
+    return 0;
+
+}
 @end
