@@ -64,9 +64,20 @@
         [self addSubview:thirdPlayer];
     }
     else {
-//        NSLog(@"gameCont: ")
-        NSLog(@"numUsers %i", num);
         [self draw4Circles];
+        UILabel* firstPlayer = [[UILabel alloc]initWithFrame:CGRectMake(50,100,100,100)];
+        UILabel* secondPlayer = [[UILabel alloc]initWithFrame:CGRectMake(50,380,100,100)];
+        UILabel* thirdPlayer = [[UILabel alloc]initWithFrame:CGRectMake(210,380,100,100)];
+        UILabel* fourthPlayer = [[UILabel alloc]initWithFrame:CGRectMake(210,100,100,100)];
+        [firstPlayer setText:@"Player 1"];
+        [secondPlayer setText:@"Player 2"];
+        [thirdPlayer setText:@"Player 3"];
+        [fourthPlayer setText:@"Player 4"];
+        [self addSubview:firstPlayer];
+        [self addSubview:secondPlayer];
+        [self addSubview:thirdPlayer];
+        [self addSubview:fourthPlayer];
+        
     }
 
     
@@ -129,7 +140,7 @@
 //    [circlePath3 fill];
     [circlePath3 stroke];
     
-    circles = @[circlePath0, circlePath1, circlePath2, circlePath3];
+    circles = @[circlePath0, circlePath1, circlePath3, circlePath2];
 }
 
 - (NSArray*) getCircles {

@@ -110,20 +110,38 @@ static GameModel* gameModel = nil;
 -(NSInteger) calculateNextUser: (NSInteger) currUser withNumTaps: (NSInteger) tapCount{
     //update the predictedNextTurn
     NSLog(@"!!!!!!!!!!!!!!!!!!!!tapcount %zd", tapCount);
-    switch (tapCount) {
-        case 1:
-            predictedNextTurn = (currUser + 1) % 3;
-            break;
-        case 2:
-            if(currUser == 0){
-                predictedNextTurn = 2;
-            }else{
-                predictedNextTurn = currUser - 1;
-            }
-            break;
-        case 3:
-            predictedNextTurn = (currUser +2 ) % 3;
-            break;
+    if(numUser == 3){
+        switch (tapCount) {
+            case 1:
+                predictedNextTurn = (currUser + 1) % 3;
+                break;
+            case 2:
+                if(currUser == 0){
+                    predictedNextTurn = 2;
+                }else{
+                    predictedNextTurn = currUser - 1;
+                }
+                break;
+            case 3:
+                predictedNextTurn = (currUser +2 ) % 3;
+                break;
+        }
+    }else{
+        switch (tapCount) {
+            case 1:
+                predictedNextTurn = (currUser + 1) % 4;
+                break;
+            case 2:
+                if(currUser == 0){
+                    predictedNextTurn = 3;
+                }else{
+                    predictedNextTurn = currUser - 1;
+                }
+                break;
+            case 3:
+                predictedNextTurn = (currUser +2 ) % 4;
+                break;
+        }
     }
     NSLog(@"the nextTurn should be: %zd", predictedNextTurn);
     return 0;
