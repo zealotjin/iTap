@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 #import "TabView.h"
 #import "GameModel.h"
 #import "BombModel.h"
@@ -21,18 +22,34 @@
     NSInteger bombStatus;
     BombModel *bomb;
     UIImageView* bombImage;
+    NSTimer* userTimer;
+    NSInteger userTime;
+    NSInteger gameTerminated;
+    UIButton *replayButton;
+    UIButton *backButton;
+    BOOL clickedFirst;
     UITouch* touches;
     CGPoint touchPoint;
 }
 
 @property (nonatomic, weak) IBOutlet TabView* viewer;
 @property (strong, nonatomic) IBOutlet UIImageView* bombImage;
+@property (strong, nonatomic) IBOutlet UIButton* replayButton;
+@property (strong, nonatomic) IBOutlet UIButton* backButton;
+
+-(IBAction)replayButtonClicked:(UIButton*)sender;
 
 - (NSInteger)askNumUsers;
 
 -(void) changeBombStatus:(NSTimer *) timer;
 -(NSTimer*) getBombTimerWithUpperTimeBound:(NSInteger) upper andLowerTimeBound:(NSInteger) lower;
+-(NSTimer*) getUserTimerWithTIme:(NSInteger) time;
+-(void) explodeBomb;
+-(void) resetUserTimer:(NSTimer *) timer;
+-(void) userTimerDone:(NSTimer *) timer;
+
 -(void) circleClicked: (NSInteger) whichCircle withTaps: (NSInteger) numTaps;
+-(void) terminateGame;
 
 -(void)handleSingleTap;
 
